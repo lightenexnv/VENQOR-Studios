@@ -16,9 +16,9 @@
 | **Tagline (primary)** | **We Build Websites That Move — And Businesses That Grow.** |
 | **Tagline (short alternates)** | `Websites & Apps That Grow Your Business` · `3D Websites. Real Results.` |
 | **Elevator (use in About / OG / meta)** | VENQOR Studios is a two-founder studio — Neil Verma (development) and Yojasvi (marketing & management) — backed by a small senior team. We build every kind of website and app: 3D & interactive, static, dynamic, headless, e-commerce, and portfolio sites, plus iOS and cross-platform apps. We ship fast, SEO-ready builds for Google and AI search, and we stay on for deployment and long-term maintenance. |
-| **Domain (confirm with owner)** | `TODO: venqor.com / venqor.studio / venqor.in` — required for SEO canonical, OG, sitemap, JSON-LD. Never leave `example.com`. |
-| **Public contact** | `TODO: email, phone (if public), address or region line, Calendly link` |
-| **Socials (only if real)** | `TODO: Instagram URL, LinkedIn URL, X URL, Behance/Dribbble URL` — remove any icon that has no real profile; never link to generic `dribbble.com`. |
+| **Domain** | `https://venqor.online` — live domain. Used for `metadataBase`, canonical, OG (`/assets/brand/og.jpg`), `sitemap.xml`, `robots.txt`, and JSON-LD `Organization.url`. |
+| **Public contact** | Email `contact@venqor.com` · Phones `Yojasvi +91 70739 99605` / `Neil Verma +91 93066 28339` · Region `India — working worldwide` · Booking via `#contact` form (Calendly not yet). |
+| **Socials** | Not yet public — `SITE.socials` is empty until real URLs are provided. Footer hides the Follow block when empty. Never link to generic `dribbble.com`. |
 
 ---
 
@@ -90,17 +90,15 @@ Style: mono, uppercase, `·` separator, infinite seamless scroll, pause on hover
 
 Use these in `SITE.works.metrics` (replace the demo `+34% / +41% / 3.8×` row) and in `SITE.testimonials.clients` / `stats`.
 
-### 5.2 Where we've worked (anonymized — never show client names)
+### 5.2 Portfolio footprint
 
-- **Germany** — business / dynamic websites
-- **Los Angeles, USA** — large-scale, fully-settled platform (our strongest case — still growing, we rebuilt it end to end and remain on maintenance)
-- **India** — many clients, including portfolios for famous people and growing e-commerce stores
+Live work spans e-commerce (Shopify + custom), AI web apps, and business websites — all shipped and live. Clients across India and international (via Shopify/Vercel deployments). The 4 testimonials are mapped to real projects (MORPHO, DT VR Universe, Barkha AI, Nath Paint House) with anonymized client labels like `Client — E-Commerce, Brand Website`.
 
-**Testimonial rule:** Never show a person's or company's real name. Format as `Client — Germany` / `Client — Los Angeles, USA` / `Client — India` with role `E-Commerce Platform · Ongoing Growth` etc. See `master-prompt.md` §8 for the 4 final anonymized quotes.
+**Testimonial rule:** Never show a person's or company's real name. Use `Client — <category>` with role `<Project> · <Category> · <Note>`.
 
-### 5.3 Case study to feature in [06] Before & After
+### 5.3 Case study in [06] Before & After
 
-Prefer the **Los Angeles large-scale platform** (ongoing growth story). If anonymized, title it `Large-Scale Platform — Los Angeles`, tags `E-Commerce · Dynamic Website`, year `2025`, location `Los Angeles, USA`.
+**MORPHO — Natural Spring Water** (`https://morphowater.com/`). Tags `E-Commerce · Brand Website`. Before/after images: `/assets/case/morpho-a.jpg` + `morpho-b.jpg`, logo `/assets/case/morpho-logo.svg`. Copy: premium brand store, fast pages, clear storytelling, checkout that converts.
 
 ---
 
@@ -108,14 +106,15 @@ Prefer the **Los Angeles large-scale platform** (ongoing growth story). If anony
 
 ### 6.1 Rule
 
-Show **only real VENQOR projects**. The template's 4 demo projects (`White Gate Hotel`, `Fashionista`, `Alta Group`, `Lementa`) must be fully replaced. Each card has 2 images `[cover, hover]` and keeps the original staggered `ratio` values.
+Show **only real VENQOR projects**. The template's 4 demo projects (`White Gate Hotel`, `Fashionista`, `Alta Group`, `Lementa`) have been replaced with 5 live projects. Each card has 2 images `[cover, hover]` and keeps the original staggered `ratio` values.
 
-| Slot | Ratio (keep) | Placeholder until owner sends links |
-|------|--------------|-------------------------------------|
-| 1 | `265 / 396` | Los Angeles — Large-Scale E-Commerce Platform (flagship) |
-| 2 | `528 / 396` | Portfolio — Well-Known Name, India |
-| 3 | `528 / 396` | Germany — Business / Dynamic Website |
-| 4 | `327 / 396` | App — iOS / Flutter (if public; else another web build) |
+| # | Slug | Title | Live URL | Tags | Ratio |
+|---|------|-------|----------|------|-------|
+| 1 | `morpho-water` | MORPHO, Natural Spring Water | https://morphowater.com/ | E-Commerce · Brand Website | `265 / 396` — also used for **Before & After [06]** (`/assets/case/morpho-a.jpg`, `morpho-b.jpg`, `morpho-logo.svg`) |
+| 2 | `dt-vr-universe` | DT VR Universe | https://dt-vruniverse.myshopify.com/ | E-Commerce · Shopify | `528 / 396` |
+| 3 | `barkha-ai` | Barkha AI | https://barkha-ai.vercel.app/ | AI · Web App | `528 / 396` |
+| 4 | `nath-paint-house` | Nath Paint House | https://nath-paint-house.vercel.app/ | Business website | `327 / 396` |
+| 5 | `little-luxe-hamper` | Little Luxe Hamper | https://little-luxe-hamper.vercel.app/ | E-Commerce · Gifting | `265 / 396` |
 
 For each real project, set: `title`, `slug` (URL-safe), `tags` (2–3 from `3D Website · E-Commerce · Portfolio · Dynamic Website · App · Branding`), `images` (`/assets/works/<slug>-1.jpg`, `/assets/works/<slug>-2.jpg`), `ratio` (as above), `href` (live URL or `#projects` if private). See `master-prompt.md` §6 for the full table to fill.
 
@@ -146,7 +145,7 @@ The owner wants a site that **ranks on Google and AI search** without buying an 
 | `description` | `VENQOR Studios builds 3D, high-performance websites and apps — static, dynamic, e-commerce, portfolios, and iOS apps with Flutter & Swift. SEO-ready for Google and AI search. From development to deployment and long-term care.` (152 chars) |
 | `keywords` | `VENQOR Studios, 3D websites, MERN stack, Next.js, Flutter, Swift, iOS app development, e-commerce, portfolio websites, SEO ready websites` |
 | `authors` / `creator` | `VENQOR Studios` |
-| `metadataBase` | `new URL("https://<real-domain>")` — ask owner, never `example.com` |
+| `metadataBase` | `new URL("https://venqor.online")` |
 | `canonical` | `/` |
 | `openGraph` | `type: website`, `locale: en_IN`, `siteName: VENQOR Studios`, `images: [{ url: "/assets/brand/og.jpg", width: 1200, height: 630 }]` |
 | `twitter` | `card: summary_large_image` |
@@ -231,15 +230,16 @@ IDs must stay: `#home`, `#agency`, `#projects`, `#process`, `#case`, `#blog`, `#
 
 ---
 
-## 11. What the Agent Must Ask the Owner (Only These 7 — Don't Guess)
+## 11. Remaining TODOs / What Still Needs Real Assets
 
-1. **Real projects** — 4 to feature: title, live URL, 1-sentence outcome, 2 screenshots (or permission to screenshot).
-2. **Domain** — `venqor.com` / `venqor.studio` / `venqor.in` — for canonical/OG/sitemap/JSON-LD.
-3. **Contact** — public email, phone (if shown), studio address or region line, booking link (Calendly or `#contact`).
-4. **Social URLs** — Instagram, LinkedIn, X, Behance/Dribbble — only real profiles.
-5. **Showreel video** — Vimeo/YouTube ID or file, or `no video yet`.
-6. **Favicon / logo source** — existing `V` mark or generate a monochrome geometric `VQ` mark.
-7. **Legal URLs** — real `/terms` and `/privacy` or keep `#terms`/`#privacy` with TODO.
+1. **Project thumbnails** — `/assets/works/morpho-*.jpg`, `dtvr-*.jpg`, `barkha-*.jpg`, `nath-*.jpg`, `littleluxe-*.jpg` are currently placeholders (copied from template). Replace with VENQOR-styled composites: template card frame + real screenshot inset (see §6.2 / master-prompt §11).
+2. **Before & After images** — `/assets/case/morpho-a.jpg` / `morpho-b.jpg` are placeholders; replace with real MORPHO before/after.
+3. **Showreel video** — `SITE.showreel.vimeoId` is empty (shows `[Coming Soon]`). Provide Vimeo/YouTube ID when ready.
+4. **Social URLs** — `SITE.socials` is empty; add real Instagram/LinkedIn/X when available.
+5. **Brand polish** — `logo-m.svg` (geometric V) and `wordmark.svg` (VENQOR) are minimal; replace with final designed versions if you have them. `og.jpg` is now branded but can be polished.
+6. **Legal pages** — `/terms` and `/privacy` are now live with original copy (written for VENQOR, not template). Review with a lawyer if needed.
+
+Domain, contact, brand copy, SEO, testimonials, FAQ, insights, and project links are done.
 
 Don't block copy work while waiting — replace text first, leave TODOs for assets/links, and keep `npm run build` passing.
 

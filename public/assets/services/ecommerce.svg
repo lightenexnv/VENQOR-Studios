@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 544" width="340" height="544"><defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#16181F"/><stop offset="1" stop-color="#0B0C10"/></linearGradient>
+<linearGradient id="ir" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7CF3FF"/><stop offset=".5" stop-color="#8E7DFF"/><stop offset="1" stop-color="#FF7BD5"/></linearGradient>
+<linearGradient id="ir2" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FF9A6B"/><stop offset=".5" stop-color="#FF7BD5"/><stop offset="1" stop-color="#7CF3FF"/></linearGradient>
+<radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#8E7DFF" stop-opacity=".55"/><stop offset="1" stop-color="#8E7DFF" stop-opacity="0"/></radialGradient>
+<filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>
+</defs>
+<rect width="340" height="544" fill="url(#bg)"/>
+<circle cx="170" cy="250" r="190" fill="url(#glow)"/>
+<g transform="translate(46 70)">
+<rect width="248" height="300" rx="14" fill="#1C1F29" stroke="#fff" stroke-opacity=".2"/>
+<rect x="14" y="14" width="220" height="170" rx="10" fill="#232733"/>
+<g transform="translate(124 100)"><path d="M-46 -30 h92 l8 92 h-108 Z" fill="url(#ir)"/><path d="M-22 -30 v-12 a22 22 0 0 1 44 0 v12" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+<circle cx="-22" cy="-12" r="4" fill="#0B0C10"/><circle cx="22" cy="-12" r="4" fill="#0B0C10"/></g>
+<rect x="18" y="204" width="130" height="12" rx="6" fill="#fff" fill-opacity=".6"/><rect x="18" y="226" width="90" height="9" rx="4.5" fill="#fff" fill-opacity=".25"/>
+<text x="18" y="276" font-family="monospace" font-size="24" fill="#fff">$49</text>
+<rect x="132" y="252" width="102" height="34" rx="17" fill="url(#ir2)"/><text x="183" y="274" text-anchor="middle" font-family="monospace" font-size="12" font-weight="700" fill="#0B0C10">ADD TO CART</text></g>
+<g transform="translate(70 410)"><rect width="200" height="58" rx="29" fill="#0B0C10" stroke="url(#ir)" stroke-width="1.5"/>
+<path d="M28 20 h8 l6 20 h20 l5 -14 h-28" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round"/><circle cx="46" cy="45" r="2.6" fill="#fff"/><circle cx="60" cy="45" r="2.6" fill="#fff"/>
+<circle cx="74" cy="17" r="9" fill="#FF7BD5"/><text x="74" y="21" text-anchor="middle" font-family="monospace" font-size="11" fill="#0B0C10" font-weight="700">3</text>
+<text x="96" y="35" font-family="monospace" font-size="15" fill="#fff">Checkout &#8594;</text></g></svg>

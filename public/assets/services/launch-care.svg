@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 544" width="340" height="544"><defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#16181F"/><stop offset="1" stop-color="#0B0C10"/></linearGradient>
+<linearGradient id="ir" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7CF3FF"/><stop offset=".5" stop-color="#8E7DFF"/><stop offset="1" stop-color="#FF7BD5"/></linearGradient>
+<linearGradient id="ir2" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FF9A6B"/><stop offset=".5" stop-color="#FF7BD5"/><stop offset="1" stop-color="#7CF3FF"/></linearGradient>
+<radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#8E7DFF" stop-opacity=".55"/><stop offset="1" stop-color="#8E7DFF" stop-opacity="0"/></radialGradient>
+<filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>
+</defs>
+<rect width="340" height="544" fill="url(#bg)"/>
+<circle cx="170" cy="250" r="190" fill="url(#glow)"/><rect x="30" y="390" width="26" height="40" rx="4" fill="url(#ir)" opacity="0.35"/><rect x="70" y="368" width="26" height="62" rx="4" fill="url(#ir)" opacity="0.45"/><rect x="110" y="342" width="26" height="88" rx="4" fill="url(#ir)" opacity="0.55"/><rect x="150" y="310" width="26" height="120" rx="4" fill="url(#ir)" opacity="0.65"/><rect x="190" y="270" width="26" height="160" rx="4" fill="url(#ir)" opacity="0.75"/><rect x="230" y="220" width="26" height="210" rx="4" fill="url(#ir)" opacity="0.85"/><rect x="270" y="168" width="26" height="262" rx="4" fill="url(#ir)" opacity="0.95"/>
+<line x1="20" y1="430" x2="320" y2="430" stroke="#fff" stroke-opacity=".25"/>
+<path d="M43 380 L83 352 L123 330 L163 290 L203 240 L243 170 L283 110" fill="none" stroke="#fff" stroke-width="2.4"/>
+<path d="M266 104 L285 108 L280 127" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round"/>
+<g transform="translate(110 150) rotate(35)"><path d="M0 -58 C22 -36 24 -6 18 22 L-18 22 C-24 -6 -22 -36 0 -58 Z" fill="#E9ECF5"/><circle cy="-18" r="9" fill="url(#ir)"/>
+<path d="M-18 6 L-32 30 L-16 24 Z M18 6 L32 30 L16 24 Z" fill="url(#ir2)"/><path d="M-10 26 L0 54 L10 26 Z" fill="#FF9A6B"/><path d="M-5 26 L0 42 L5 26 Z" fill="#FFE07A"/></g>
+<path d="M20 476 h70 l10 -18 l12 34 l12 -44 l12 28 h184" fill="none" stroke="#7CF3FF" stroke-width="2" stroke-linejoin="round"/>
+<text x="20" y="512" font-family="monospace" font-size="12" fill="#fff" fill-opacity=".55">UPTIME 99.9%  &#183;  CWV PASS</text></svg>

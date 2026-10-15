@@ -1,5 +1,6 @@
 "use client";
 
+import { useLayoutEffect, useRef } from "react";
 import { SITE } from "@/content/site";
 import TwistGallery from "@/components/fx/TwistGallery";
 import Scramble from "@/components/ui/Scramble";
@@ -29,6 +30,33 @@ const RIBBON = {
   tiltYdeg: 35,
 };
 
+/** Brand name as live text, scaled so it spans exactly the full viewport width. */
+function FullWidthWordmark({ text }: { text: string }) {
+  const host = useRef<HTMLHeadingElement>(null);
+  const word = useRef<HTMLSpanElement>(null);
+  useLayoutEffect(() => {
+    const h = host.current!,
+      w = word.current!;
+    const fit = () => {
+      w.style.fontSize = "100px";
+      const natural = w.getBoundingClientRect().width;
+      if (natural > 0) w.style.fontSize = `${(100 * h.clientWidth) / natural}px`;
+    };
+    fit();
+    document.fonts?.ready.then(fit);
+    const ro = new ResizeObserver(fit);
+    ro.observe(h);
+    return () => ro.disconnect();
+  }, [text]);
+  return (
+    <h1 ref={host} className={styles.wordmark} aria-label={SITE.brand}>
+      <span ref={word} className={styles.wordmarkText} aria-hidden>
+        {text}
+      </span>
+    </h1>
+  );
+}
+
 export default function Hero() {
   const bp = useBreakpoint();
   const ribbon = { ...RIBBON, count: bp === "phone" ? 44 : 83, camTargetY: bp === "phone" ? -138 : bp === "tablet" ? 30 : 17 };
@@ -47,10 +75,11 @@ export default function Hero() {
         </div>
 
         <div className={styles.brand}>
-          <Scramble className={styles.tagline} text={SITE.hero.tagline} trigger="view" durationMs={2000} as="div" />
-          <h1 className={styles.wordmark}>
-            <img src={SITE.wordmark} alt={SITE.brand} />
-          </h1>
+          <Scramble className={styles.tagline} text={SITE.hero.tagline} trigger="view" durationMs={2000} as="div" style={{ whiteSpace: "pre-wrap" }} />
+          <FullWidthWordmark text={SITE.shortBrand} />
+          <span className={styles.studios} aria-hidden>
+            {SITE.brand.replace(SITE.shortBrand, "").trim()}
+          </span>
         </div>
       </div>
     </section>

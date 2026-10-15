@@ -12,6 +12,9 @@ type Props = {
   fontScale?: number;
   scrubSensitivity?: number;
   className?: string;
+  /** "sphere" (default) = round, sized to the shorter side; "ellipse" = stretched to fill the box, centred */
+  shape?: "sphere" | "ellipse";
+  label?: string;
 };
 
 const AXIS = (() => {
@@ -20,16 +23,20 @@ const AXIS = (() => {
   return v.map((x) => x / n) as [number, number, number];
 })();
 
-export default function WordSphere({ words, speed = 0.0058, fontScale = 0.074, scrubSensitivity = 0.003, className }: Props) {
+export default function WordSphere({ words, speed = 0.0058, fontScale = 0.074, scrubSensitivity = 0.003, className, shape = "sphere", label = "Technology stack" }: Props) {
   const host = useRef<HTMLDivElement>(null);
   const list = useRef<HTMLUListElement>(null);
   const [size, setSize] = useState(0);
+  const [box, setBox] = useState({ w: 0, h: 0 });
   const auto = useRef(0);
   const scrub = useRef(0);
 
   useLayoutEffect(() => {
     const el = host.current!;
-    const update = () => setSize(Math.max(0, Math.min(el.clientWidth, el.clientHeight)));
+    const update = () => {
+      setSize(Math.max(0, Math.min(el.clientWidth, el.clientHeight)));
+      setBox({ w: el.clientWidth, h: el.clientHeight });
+    };
     update();
     const ro = new ResizeObserver(update);
     ro.observe(el);
@@ -83,7 +90,9 @@ export default function WordSphere({ words, speed = 0.0058, fontScale = 0.074, s
       if (!reduce) auto.current += Math.max(0, speed);
       const nodes = list.current?.children;
       if (nodes && size) {
-        const R = size * 0.5;
+        // ellipse: spread across the whole box (leaving room for the widest words), centred
+        const Rx = shape === "ellipse" ? box.w * 0.3 : size * 0.5;
+        const Ry = shape === "ellipse" ? box.h * 0.38 : size * 0.5;
         const a = auto.current + scrub.current;
         const [x, y, z] = AXIS;
         const s = Math.sin(a),
@@ -96,7 +105,7 @@ export default function WordSphere({ words, speed = 0.0058, fontScale = 0.074, s
           const ry = m[3] * px + m[4] * py + m[5] * pz;
           const rz = m[6] * px + m[7] * py + m[8] * pz;
           const el = nodes[i] as HTMLElement;
-          el.style.transform = `translate(${R * rx}px, ${R * ry}px) scale(${(rz + 2) / 3})`;
+          el.style.transform = `translate(${Rx * rx}px, ${Ry * ry}px) scale(${(rz + 2) / 3})`;
           el.style.opacity = String(Math.max(0, Math.min(1, (rz + 1.5) / 2.5)));
         }
       }
@@ -104,14 +113,18 @@ export default function WordSphere({ words, speed = 0.0058, fontScale = 0.074, s
     };
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
-  }, [words, speed, size]);
+  }, [words, speed, size, box, shape]);
 
   return (
     <div ref={host} className={className} style={{ position: "relative", width: "100%", height: "100%", userSelect: "none", touchAction: "pan-y", cursor: "grab" }}>
       <ul
         ref={list}
-        aria-label="Technology stack"
-        style={{ position: "absolute", left: `calc(50% - ${size / 2}px)`, top: `calc(50% - ${size / 2}px)`, width: size, height: size, listStyle: "none", margin: 0, padding: 0 }}
+        aria-label={label}
+        style={
+          shape === "ellipse"
+            ? { position: "absolute", inset: 0, listStyle: "none", margin: 0, padding: 0 }
+            : { position: "absolute", left: `calc(50% - ${size / 2}px)`, top: `calc(50% - ${size / 2}px)`, width: size, height: size, listStyle: "none", margin: 0, padding: 0 }
+        }
       >
         {words.map((w) => (
           <li

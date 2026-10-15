@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react";
 import { SITE } from "@/content/site";
 import FillButton from "@/components/ui/FillButton";
+import { isEmail, submitWeb3Form } from "@/lib/web3forms";
 import styles from "./FaqContact.module.css";
 
 function Arrow() {
@@ -49,15 +50,27 @@ function Faq() {
 function StartProject() {
   const s = SITE.startProject;
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [sent, setSent] = useState(false);
-  const valid = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(form.email) && form.message.trim().length > 0;
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [error, setError] = useState("");
+  const valid = isEmail(form.email) && form.message.trim().length > 0;
 
-  const submit = (e: FormEvent) => {
+  const submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!valid) return;
-    // Wire to your backend here, e.g. fetch("/api/contact", { method: "POST", body: JSON.stringify(form) })
-    setSent(true);
-    setForm({ name: "", email: "", message: "" });
+    if (!valid || status === "sending") return;
+    // honeypot: bots tick the hidden box, humans never see it
+    if ((e.currentTarget.elements.namedItem("botcheck") as HTMLInputElement | null)?.checked) return;
+    setStatus("sending");
+    const res = await submitWeb3Form(
+      { name: form.name || "(not provided)", email: form.email, message: form.message, replyto: form.email },
+      { subject: `New project enquiry — ${form.name || form.email}` }
+    );
+    if (res.ok) {
+      setStatus("sent");
+      setForm({ name: "", email: "", message: "" });
+    } else {
+      setStatus("error");
+      setError(res.message);
+    }
   };
 
   return (
@@ -76,7 +89,7 @@ function StartProject() {
           </p>
         </div>
         <div className={styles.kate}>
-          <img src={SITE.manager.contactImage} alt={`${SITE.manager.first} ${SITE.manager.last}`} />
+          <img src={SITE.manager.contactImage} alt={SITE.manager.fullName} />
           <span className="t-13">
             {SITE.manager.first}
             <br />
@@ -101,9 +114,13 @@ function StartProject() {
             <span className="t-13">{s.fields.message}</span>
             <textarea name="message" required placeholder={s.placeholders.message} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} />
           </label>
-          <FillButton type="submit" tone="dark" disabled={!valid} className={styles.send}>
-            {sent ? s.sent : s.submit}
+          <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" className="visually-hidden" aria-hidden />
+          <FillButton type="submit" tone="dark" disabled={!valid || status === "sending"} className={styles.send}>
+            {status === "sending" ? "Sending…" : status === "sent" ? s.sent : s.submit}
           </FillButton>
+          <p className={`t-legal ${styles.status}`} role="status" aria-live="polite">
+            {status === "error" ? error : status === "sent" ? "Message received — check your inbox for our reply." : ""}
+          </p>
         </form>
         <p className={`t-legal ${styles.terms}`}>
           Before submitting, you agree to our{" "}

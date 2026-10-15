@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630"><defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#15171E"/><stop offset="1" stop-color="#0A0B0F"/></linearGradient>
+<linearGradient id="ir" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7CF3FF"/><stop offset=".5" stop-color="#8E7DFF"/><stop offset="1" stop-color="#FF7BD5"/></linearGradient>
+<linearGradient id="ir2" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FF9A6B"/><stop offset=".5" stop-color="#FF7BD5"/><stop offset="1" stop-color="#7CF3FF"/></linearGradient>
+<radialGradient id="glowA" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#8E7DFF" stop-opacity=".45"/><stop offset="1" stop-color="#8E7DFF" stop-opacity="0"/></radialGradient>
+<radialGradient id="glowB" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#7CF3FF" stop-opacity=".3"/><stop offset="1" stop-color="#7CF3FF" stop-opacity="0"/></radialGradient>
+<pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="#fff" fill-opacity=".08"/></pattern>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)"/><rect width="1200" height="630" fill="url(#dots)"/>
+<circle cx="420" cy="300" r="320" fill="url(#glowA)"/><circle cx="820" cy="330" r="300" fill="url(#glowB)"/><g transform="translate(165 120)">
+<rect width="270" height="360" rx="18" fill="#1A1D26" stroke="#fff" stroke-opacity=".14"/>
+<text x="24" y="44" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="20" font-weight="700" fill="#fff">STATIC</text>
+<text x="24" y="70" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#fff" fill-opacity=".5">the lunchbox</text>
+<g transform="translate(24 104)">
+<rect width="222" height="140" rx="12" fill="#232733"/><rect x="14" y="14" width="194" height="40" rx="8" fill="url(#ir)"/>
+<rect x="14" y="66" width="90" height="60" rx="8" fill="#fff" fill-opacity=".08"/><rect x="118" y="66" width="90" height="60" rx="8" fill="#fff" fill-opacity=".08"/>
+<path d="M0 170 h222" stroke="#fff" stroke-opacity=".15"/>
+<text x="0" y="204" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#7CF3FF">&#9889; pre-built</text>
+<text x="0" y="228" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#fff" fill-opacity=".55">opens instantly</text></g></g><g transform="translate(465 120)">
+<rect width="270" height="360" rx="18" fill="#1A1D26" stroke="#fff" stroke-opacity=".14"/>
+<text x="24" y="44" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="20" font-weight="700" fill="#fff">DYNAMIC</text>
+<text x="24" y="70" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#fff" fill-opacity=".5">the restaurant</text>
+<g transform="translate(24 104)">
+<rect width="222" height="60" rx="12" fill="#232733"/><circle cx="34" cy="30" r="14" fill="url(#ir2)"/><rect x="58" y="22" width="120" height="16" rx="8" fill="#fff" fill-opacity=".2"/>
+<path d="M111 70 v26" stroke="#fff" stroke-opacity=".4" stroke-dasharray="4 4"/>
+<rect x="56" y="100" width="110" height="44" rx="10" fill="none" stroke="url(#ir)" stroke-width="2"/><text x="111" y="128" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#fff">server</text>
+<ellipse cx="111" cy="164" rx="40" ry="10" fill="none" stroke="#fff" stroke-opacity=".4"/><path d="M71 164 v18 a40 10 0 0 0 80 0 v-18" fill="none" stroke="#fff" stroke-opacity=".4"/>
+<text x="0" y="214" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#FF7BD5">&#9881; cooked on request</text>
+<text x="0" y="236" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#fff" fill-opacity=".55">logins &#183; carts &#183; live data</text></g></g><g transform="translate(765 120)">
+<rect width="270" height="360" rx="18" fill="#1A1D26" stroke="#fff" stroke-opacity=".14"/>
+<text x="24" y="44" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="20" font-weight="700" fill="#fff">HEADLESS</text>
+<text x="24" y="70" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#fff" fill-opacity=".5">the central kitchen</text>
+<g transform="translate(24 104)">
+<rect x="76" y="0" width="70" height="54" rx="10" fill="url(#ir)"/><text x="111" y="33" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" font-weight="700" fill="#0A0B0F">CMS</text>
+<path d="M111 54 L30 116 M111 54 L111 116 M111 54 L192 116" stroke="#fff" stroke-opacity=".45" stroke-width="1.5"/>
+<rect x="0" y="116" width="60" height="42" rx="7" fill="#232733" stroke="#fff" stroke-opacity=".2"/>
+<rect x="88" y="112" width="46" height="62" rx="10" fill="#232733" stroke="#fff" stroke-opacity=".2"/>
+<rect x="166" y="116" width="56" height="46" rx="7" fill="#232733" stroke="#fff" stroke-opacity=".2"/>
+<text x="0" y="214" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#8E7DFF">&#10148; one source</text>
+<text x="0" y="236" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#fff" fill-opacity=".55">web &#183; app &#183; kiosk</text></g></g></svg>

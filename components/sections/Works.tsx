@@ -7,7 +7,11 @@ import styles from "./Works.module.css";
 
 export default function Works() {
   const w = SITE.works;
-  const [whiteGate, alta, fashionista, lementa] = w.projects;
+  const projects = w.projects;
+  // Split 5 projects across two staggered columns (keeps the staggered grid)
+  // colA: 0, 2, 4  |  colB (offset): 1, 3
+  const colA = projects.filter((_, i) => i % 2 === 0);
+  const colB = projects.filter((_, i) => i % 2 === 1);
 
   return (
     <section id="projects" className={styles.section}>
@@ -39,12 +43,14 @@ export default function Works() {
 
           <div className={styles.cards}>
             <div className={styles.col}>
-              <ProjectCard project={whiteGate} />
-              <ProjectCard project={fashionista} />
+              {colA.map((p) => (
+                <ProjectCard key={p.slug} project={p} />
+              ))}
             </div>
             <div className={`${styles.col} ${styles.colOffset}`}>
-              <ProjectCard project={alta} />
-              <ProjectCard project={lementa} />
+              {colB.map((p) => (
+                <ProjectCard key={p.slug} project={p} />
+              ))}
             </div>
           </div>
         </div>

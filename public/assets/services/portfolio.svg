@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 544" width="340" height="544"><defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#16181F"/><stop offset="1" stop-color="#0B0C10"/></linearGradient>
+<linearGradient id="ir" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7CF3FF"/><stop offset=".5" stop-color="#8E7DFF"/><stop offset="1" stop-color="#FF7BD5"/></linearGradient>
+<linearGradient id="ir2" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FF9A6B"/><stop offset=".5" stop-color="#FF7BD5"/><stop offset="1" stop-color="#7CF3FF"/></linearGradient>
+<radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#8E7DFF" stop-opacity=".55"/><stop offset="1" stop-color="#8E7DFF" stop-opacity="0"/></radialGradient>
+<filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>
+</defs>
+<rect width="340" height="544" fill="url(#bg)"/>
+<circle cx="170" cy="250" r="190" fill="url(#glow)"/>
+<g transform="translate(30 70)">
+<rect width="130" height="170" rx="8" fill="#232733"/><rect x="146" width="134" height="96" rx="8" fill="#232733"/>
+<rect x="146" y="110" width="134" height="200" rx="8" fill="url(#ir)"/>
+<rect y="184" width="130" height="126" rx="8" fill="#232733"/><rect y="324" width="280" height="104" rx="8" fill="#232733"/>
+<circle cx="45" cy="60" r="22" fill="#fff" fill-opacity=".12"/><path d="M14 150 l40 -46 l30 30 l20 -18 l26 34 Z" fill="#fff" fill-opacity=".12"/>
+<path d="M160 70 l30 -36 l24 26 l14 -12 l38 22" fill="none" stroke="#fff" stroke-opacity=".25" stroke-width="2"/>
+<path d="M14 290 l30 -40 l26 22 l18 -14 l28 32 Z" fill="#fff" fill-opacity=".1"/>
+<g transform="translate(213 210)"><circle r="36" fill="#0B0C10" fill-opacity=".35"/><path d="M0 -20 L6 -6 L21 -6 L9 3 L13 18 L0 9 L-13 18 L-9 3 L-21 -6 L-6 -6 Z" fill="#fff"/></g>
+<rect x="16" y="344" width="120" height="12" rx="6" fill="#fff" fill-opacity=".55"/><rect x="16" y="366" width="200" height="8" rx="4" fill="#fff" fill-opacity=".2"/><rect x="16" y="382" width="160" height="8" rx="4" fill="#fff" fill-opacity=".2"/>
+<rect x="196" y="392" width="70" height="24" rx="12" fill="none" stroke="#fff" stroke-opacity=".5"/><text x="231" y="408" text-anchor="middle" font-family="monospace" font-size="10" fill="#fff">HIRE ME</text>
+<rect x="138" y="102" width="150" height="216" rx="12" fill="none" stroke="url(#ir2)" stroke-width="2"/></g></svg>

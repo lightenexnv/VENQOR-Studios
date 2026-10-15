@@ -4,6 +4,7 @@ import { useState, type FormEvent } from "react";
 import { SITE } from "@/content/site";
 import RollLink from "@/components/ui/RollLink";
 import FillButton from "@/components/ui/FillButton";
+import { isEmail, submitWeb3Form } from "@/lib/web3forms";
 import BookCallCard from "@/components/blocks/BookCallCard";
 import HelixGallery from "@/components/fx/HelixGallery";
 import { useBreakpoint } from "@/lib/useBreakpoint";
@@ -12,13 +13,25 @@ import styles from "./Footer.module.css";
 function Newsletter() {
   const f = SITE.footer;
   const [email, setEmail] = useState("");
-  const [done, setDone] = useState(false);
-  const submit = (e: FormEvent) => {
+  const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
+  const [error, setError] = useState("");
+  const submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return;
-    // Wire to your email provider here.
-    setDone(true);
-    setEmail("");
+    if (!isEmail(email)) {
+      setStatus("error");
+      setError("Please enter a valid email address.");
+      return;
+    }
+    if ((e.currentTarget.elements.namedItem("botcheck") as HTMLInputElement | null)?.checked) return;
+    setStatus("sending");
+    const res = await submitWeb3Form({ email, replyto: email, message: `Newsletter signup: ${email}` }, { subject: "New newsletter subscriber" });
+    if (res.ok) {
+      setStatus("done");
+      setEmail("");
+    } else {
+      setStatus("error");
+      setError(res.message);
+    }
   };
   return (
     <div className={styles.newsletter}>
@@ -29,9 +42,15 @@ function Newsletter() {
           <span className="t-13">{f.emailLabel}</span>
           <input type="email" name="email" required autoComplete="email" placeholder={f.emailPlaceholder} value={email} onChange={(e) => setEmail(e.target.value)} />
         </label>
-        <FillButton type="submit" tone="light" className={styles.subscribe}>
-          {done ? f.subscribed : f.subscribe}
+        <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" className="visually-hidden" aria-hidden />
+        <FillButton type="submit" tone="light" className={styles.subscribe} disabled={status === "sending"}>
+          {status === "sending" ? "Subscribing…" : status === "done" ? f.subscribed : f.subscribe}
         </FillButton>
+        {status === "error" && (
+          <p className="t-legal" role="alert" style={{ margin: 0, color: "var(--white-70)" }}>
+            {error}
+          </p>
+        )}
       </form>
       <p className={`t-legal ${styles.legal}`}>
         Before submitting, you agree to our <a href={SITE.startProject.privacyHref}>Privacy Policy.</a>
@@ -47,9 +66,11 @@ export default function Footer() {
   const brand = (
     <div className={styles.brand}>
       <p className="t-17">{f.tagline}</p>
-      <img src={SITE.wordmark} alt={SITE.brand} className={styles.wordmark} />
+      <img src={SITE.wordmark} alt={SITE.shortBrand} className={styles.wordmark} />
     </div>
   );
+
+  const hasSocials = SITE.socials.length > 0;
 
   return (
     <footer className={styles.footer}>
@@ -77,23 +98,30 @@ export default function Footer() {
                   </RollLink>
                 ))}
               </nav>
-              <div className={styles.follow}>
-                <h2 className="t-20">{f.follow}</h2>
-                <div className={styles.socials}>
-                  {SITE.socials.map((s) => (
-                    <a key={s.label} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label}>
-                      <img src={s.icon} alt="" width={30} height={30} />
-                    </a>
-                  ))}
+              {hasSocials && (
+                <div className={styles.follow}>
+                  <h2 className="t-20">{f.follow}</h2>
+                  <div className={styles.socials}>
+                    {SITE.socials.map((s) => (
+                      <a key={s.label} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label}>
+                        <img src={s.icon} alt="" width={30} height={30} />
+                      </a>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
               <address className={styles.info}>
                 <a href={SITE.contact.addressHref} target="_blank" rel="noreferrer" className="t-20">
                   {SITE.contact.address}
                 </a>
-                <a href={SITE.contact.phoneHref} className="t-20">
-                  {SITE.contact.phone}
+                <a href={SITE.contact.emailHref} className="t-20">
+                  {SITE.contact.email}
                 </a>
+                {SITE.contact.phones.map((p) => (
+                  <a key={p.label} href={p.href} className="t-20">
+                    {p.label}: {p.value}
+                  </a>
+                ))}
               </address>
             </div>
           </div>
@@ -106,19 +134,24 @@ export default function Footer() {
               <a href={SITE.startProject.privacyHref} className="t-legal">
                 Privacy Policy
               </a>
+              <a href={`mailto:${SITE.contact.email}`} className="t-legal">
+                {SITE.contact.email}
+              </a>
             </div>
             <div className={styles.copyright}>
               <p className="t-legal">{f.copyright}</p>
-              <p className={`t-legal ${styles.designed}`}>
-                <img src={f.designedBy.avatar} alt="" width={28} height={28} />
-                <span>
-                  {f.designedBy.label}{" "}
-                  <a href={f.designedBy.href} target="_blank" rel="noreferrer">
-                    {f.designedBy.name}
-                  </a>
-                  .
-                </span>
-              </p>
+              {f.designedBy && (
+                <p className={`t-legal ${styles.designed}`}>
+                  <img src={f.designedBy.avatar} alt="" width={28} height={28} />
+                  <span>
+                    {f.designedBy.label}{" "}
+                    <a href={f.designedBy.href} target="_blank" rel="noreferrer">
+                      {f.designedBy.name}
+                    </a>
+                    .
+                  </span>
+                </p>
+              )}
             </div>
           </div>
         </div>

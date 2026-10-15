@@ -258,3 +258,135 @@
   .text {
   }
 }
+
+/* ---------- floating reviews (replaces the logo ticker) ---------- */
+.reviews {
+  position: relative;
+  height: 300px;
+  border-radius: 10px;
+  background: var(--white);
+  overflow: hidden;
+}
+.reviewsTitle {
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  z-index: 1;
+}
+.reviewSphere {
+  position: absolute;
+  inset: 40px 20px 10px;
+}
+@media (max-width: 809.98px) {
+  .reviews {
+    height: 280px;
+  }
+}
+
+/* ---------- testimonial proof + accents ---------- */
+.proof {
+  position: relative;
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #0b0c10;
+  isolation: isolate;
+}
+.browserBar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 26px;
+  padding: 0 10px;
+  background: #1c1f29;
+}
+.browserBar i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+}
+.browserBar i:nth-child(1) {
+  background: #ff7bd5;
+}
+.browserBar i:nth-child(2) {
+  background: #8e7dff;
+}
+.browserBar i:nth-child(3) {
+  background: #7cf3ff;
+}
+.url {
+  margin-left: 8px;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.07);
+}
+.shot {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 8;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.8s var(--spring);
+}
+a.proof:hover .shot {
+  transform: scale(1.04);
+}
+.badge {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: rgba(11, 12, 16, 0.75);
+  color: var(--white);
+  backdrop-filter: blur(6px);
+}
+.badgeLive {
+  background: var(--white);
+  color: var(--black);
+}
+.text {
+  position: relative;
+}
+.qmark {
+  position: absolute;
+  left: 22px;
+  top: -6px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 110px;
+  line-height: 1;
+  background: linear-gradient(135deg, #7cf3ff, #8e7dff 50%, #ff7bd5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0.85;
+  pointer-events: none;
+}
+.mark {
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 34px;
+  color: var(--white);
+  background: linear-gradient(135deg, #7cf3ff, #8e7dff 50%, #ff7bd5);
+  border: 4px solid var(--white);
+  box-sizing: border-box;
+}
+.meta {
+  opacity: 0.55;
+}
+
+/* project-type illustrations (private projects) are portrait — show their middle */
+.shotArt {
+  object-position: center 30%;
+}

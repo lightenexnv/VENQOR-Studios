@@ -25,7 +25,7 @@ export default function Nav() {
 
   return (
     <>
-      <a href="#home" className={styles.logo} aria-label={`${SITE.brand} — home`}>
+      <a href="/#home" className={styles.logo} aria-label={`${SITE.brand} — home`}>
         <img src={SITE.logo} alt="" width={30} height={41} />
       </a>
 

@@ -15,11 +15,11 @@ export default function BookCallCard({ tone }: { tone: "light" | "dark" }) {
     <div className={styles.media}>
       {tone === "light" ? (
         <>
-          <img src={m.heroImage} alt={`${m.first} ${m.last}`} className={styles.still} />
+          <img src={m.heroImage} alt={m.fullName} className={styles.still} />
           <video className={styles.video} src={m.video} poster={m.videoPoster} autoPlay muted loop playsInline preload="metadata" aria-hidden />
         </>
       ) : (
-        <img src={m.footerImage} alt={`${m.first} ${m.last}`} className={styles.still} />
+        <img src={m.footerImage} alt={m.fullName} className={styles.still} />
       )}
       <span className={`t-13 ${styles.name}`}>{m.short}</span>
     </div>

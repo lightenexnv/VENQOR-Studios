@@ -12,7 +12,7 @@ export default function Insights() {
             <span className={`t-28 ph-24 ${styles.number}`}>{s.number}</span>
             <h2 className="t-28 ph-24">{s.label}</h2>
           </div>
-          <a href="#blog" className={styles.all}>
+          <a href={s.allHref} className={styles.all}>
             <Scramble text={s.all} className={styles.caps} />
           </a>
         </div>

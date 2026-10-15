@@ -1,7 +1,7 @@
 /**
  * Home page — section order mirrors the reference template:
  * Hero · [01] About · Showreel · [02] Services · [03] Featured Works · [04] How We Work ·
- * [05] Testimonials · [06] Before & After · [07] Insights · [08] FAQ + Start a Project · Footer
+ * [05] Testimonials · [06] Insights · [07] FAQ + Start a Project · Footer
  * All copy/assets live in content/site.ts.
  */
 import Nav from "@/components/layout/Nav";
@@ -14,7 +14,6 @@ import Services from "@/components/sections/Services";
 import Works from "@/components/sections/Works";
 import Process from "@/components/sections/Process";
 import Testimonials from "@/components/sections/Testimonials";
-import CaseStudy from "@/components/sections/CaseStudy";
 import Insights from "@/components/sections/Insights";
 import FaqContact from "@/components/sections/FaqContact";
 
@@ -30,7 +29,6 @@ export default function Home() {
         <Works />
         <Process />
         <Testimonials />
-        <CaseStudy />
         <Insights />
         <FaqContact />
       </main>

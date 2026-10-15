@@ -3,25 +3,52 @@
 import { useRef, useState } from "react";
 import { SITE } from "@/content/site";
 import WaveText from "@/components/fx/WaveText";
-import Ticker from "@/components/fx/Ticker";
+import WordSphere from "@/components/fx/WordSphere";
 import { useBreakpoint } from "@/lib/useBreakpoint";
 import styles from "./Testimonials.module.css";
 
 const T = SITE.testimonials;
 type Item = (typeof T.items)[number];
-const byName = (n: string) => T.items.find((i) => i.name === n)!;
 
+const domain = (url: string) => url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+
+/**
+ * Testimonial card. Proof comes first: a browser-framed preview of the client's actual live
+ * site (with a working link), then the quote, then who said it. Private projects show an
+ * illustration of the project type instead of a fake screenshot.
+ */
 function Quote({ item, offset = false }: { item: Item; offset?: boolean }) {
+  const live = Boolean(item.site);
+  const Preview = live ? "a" : "div";
   return (
     <div className={`${styles.quoteWrap} ${offset ? styles.offset : ""}`}>
       <figure className={styles.quote}>
-        <blockquote className={`t-body ${styles.text}`}>{item.quote}</blockquote>
-        <figcaption className={styles.from}>
-          <span className={styles.mark}>
-            <img src={item.mark} alt="" width={40} height={40} />
+        <Preview
+          className={styles.proof}
+          {...(live ? { href: item.site, target: "_blank", rel: "noreferrer", "aria-label": `Visit ${item.project} live site` } : {})}
+        >
+          <span className={styles.browserBar} aria-hidden>
+            <i />
+            <i />
+            <i />
+            <span className={styles.url}>{live ? domain(item.site) : `${item.project} · private project`}</span>
           </span>
-          <span className={`t-20 tb-17 ph-17 ${styles.name}`}>{item.name}</span>
-          <span className={`t-13 ${styles.role}`}>{item.role}</span>
+          <img src={item.preview} alt={live ? `${item.project} live website` : ""} loading="lazy" className={`${styles.shot} ${live ? "" : styles.shotArt}`} />
+          <span className={`t-13 ${styles.badge} ${live ? styles.badgeLive : ""}`}>{live ? "Live site ↗" : "Private project"}</span>
+        </Preview>
+        <blockquote className={`t-body ${styles.text}`}>
+          <span className={styles.qmark} aria-hidden>
+            &ldquo;
+          </span>
+          {item.quote}
+        </blockquote>
+        <figcaption className={styles.from}>
+          <span className={styles.mark} aria-hidden>
+            {item.initial}
+          </span>
+          <span className={`t-20 tb-17 ph-17 ${styles.name}`}>{item.project}</span>
+          <span className={`t-13 ${styles.role}`}>{item.role.replace(`${item.project} · `, "").replace(/^[^·]*Water · /, "")}</span>
+          <span className={`t-13 ${styles.meta}`}>Delivered {item.year}</span>
         </figcaption>
       </figure>
     </div>
@@ -36,17 +63,11 @@ function ClientsLeft() {
         <span className={`t-stat tb-stat84 ph-stat53 ${styles.statValue}`}>{T.clients.value}</span>
         <span className={`t-20 ph-17 ${styles.statLabel}`}>{T.clients.label}</span>
       </div>
-      <div className={styles.logos}>
-        <Ticker gap={62} direction="right">
-          {T.marks.map((m, i) => (
-            <img key={i} src={m} alt="" width={30} height={30} className={styles.markImg} />
-          ))}
-        </Ticker>
-        <Ticker gap={35} direction="left">
-          {T.wordmarks.map((m, i) => (
-            <img key={i} src={m.src} alt="" width={m.w} height={40} style={{ width: m.w, height: 40 }} />
-          ))}
-        </Ticker>
+      <div className={styles.reviews}>
+        <span className={`t-caps ${styles.reviewsTitle}`}>{T.reviewsTitle}</span>
+        <div className={styles.reviewSphere}>
+          <WordSphere words={T.reviews} fontScale={0.052} speed={0.0045} shape="ellipse" label="What clients say" />
+        </div>
       </div>
     </div>
   );
@@ -67,7 +88,7 @@ function ClientsRight() {
 }
 
 function Carousel() {
-  const order = ["Alex Chen", "Dana Fox", "Maya Patel", "Leon Müller"].map(byName);
+  const order = T.items;
   const track = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
   return (
@@ -108,10 +129,7 @@ function Carousel() {
 
 export default function Testimonials() {
   const bp = useBreakpoint();
-  const maya = byName("Maya Patel"),
-    alex = byName("Alex Chen"),
-    leon = byName("Leon Müller"),
-    dana = byName("Dana Fox");
+  const items = T.items;
 
   return (
     <section id="testimonials" className={styles.section}>
@@ -136,14 +154,14 @@ export default function Testimonials() {
           <div className={styles.grid3}>
             <div className={styles.col}>
               <ClientsLeft />
-              <Quote item={maya} />
+              {items[0] && <Quote item={items[0]} />}
             </div>
             <div className={styles.col}>
-              <Quote item={alex} offset />
-              <Quote item={leon} />
+              {items[1] && <Quote item={items[1]} offset />}
+              {items[2] && <Quote item={items[2]} />}
             </div>
             <div className={`${styles.col} ${styles.colTight}`}>
-              <Quote item={dana} />
+              {items[3] && <Quote item={items[3]} />}
               <ClientsRight />
             </div>
           </div>
@@ -153,13 +171,13 @@ export default function Testimonials() {
           <div className={styles.grid2}>
             <div className={styles.col}>
               <ClientsLeft />
-              <Quote item={maya} />
+              {items[0] && <Quote item={items[0]} />}
             </div>
             <div className={styles.col}>
-              <Quote item={alex} offset />
-              <Quote item={leon} />
+              {items[1] && <Quote item={items[1]} offset />}
+              {items[2] && <Quote item={items[2]} />}
             </div>
-            <Quote item={dana} />
+            {items[3] && <Quote item={items[3]} />}
             <ClientsRight />
           </div>
         )}

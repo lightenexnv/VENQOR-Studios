@@ -1,0 +1,270 @@
+.page {
+  background: var(--bg);
+  padding: 140px var(--gutter) 40px;
+}
+.back {
+  display: inline-block;
+  margin-bottom: 32px;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+.back:hover {
+  opacity: 1;
+}
+
+/* ---------- index ---------- */
+.index {
+  max-width: var(--page-max);
+  margin: 0 auto;
+}
+.indexTitle {
+  margin: 0 0 20px;
+}
+.grid {
+  list-style: none;
+  margin: 60px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  height: 100%;
+  padding: 2px;
+  border-radius: 10px;
+  background: var(--white);
+  transition: transform 0.6s var(--spring);
+}
+.card:hover {
+  transform: translateY(-8px);
+}
+.card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.cardText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 30px;
+  border-radius: 8px;
+  background: var(--bg);
+}
+.cardText h2,
+.cardText p {
+  margin: 0;
+}
+.read {
+  margin-top: auto;
+}
+
+/* ---------- article ---------- */
+.article {
+  max-width: 780px;
+  margin: 0 auto;
+}
+.meta {
+  margin: 0 0 18px;
+  opacity: 0.6;
+}
+.title {
+  margin: 0 0 22px;
+}
+.lead {
+  margin: 0 0 40px;
+}
+.cover {
+  width: 100%;
+  aspect-ratio: 16 / 8;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 50px;
+}
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.body p {
+  margin: 0;
+}
+.h2 {
+  margin: 30px 0 0;
+}
+.list {
+  margin: 0;
+  list-style: disc;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--white);
+  padding: 2px;
+}
+.steps li {
+  display: flex;
+  gap: 24px;
+  padding: 24px 26px;
+  border-radius: 8px;
+  background: var(--bg);
+}
+.steps h3,
+.steps p {
+  margin: 0;
+}
+.steps h3 {
+  margin-bottom: 8px;
+}
+.stepN {
+  flex: 0 0 auto;
+  padding-top: 4px;
+}
+.callout {
+  padding: 26px 30px;
+  border-radius: 10px;
+  background: var(--dark);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.callout p {
+  color: var(--white-70);
+}
+.compare {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  padding: 2px;
+  border-radius: 10px;
+  background: var(--white);
+}
+.compareCol {
+  padding: 24px;
+  border-radius: 8px;
+  background: var(--bg);
+}
+.compareCol h3 {
+  margin: 0 0 14px;
+}
+.compareCol ul {
+  margin: 0;
+  list-style: disc;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.quiz {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 20px;
+}
+.quiz > span {
+  margin-bottom: 14px;
+}
+.qa {
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 18px 0;
+}
+.qa summary {
+  cursor: pointer;
+  list-style: none;
+}
+.qa summary::-webkit-details-marker {
+  display: none;
+}
+.qa summary::after {
+  content: " +";
+  opacity: 0.5;
+}
+.qa[open] summary::after {
+  content: " \2212";
+}
+.qa p {
+  margin: 12px 0 0;
+}
+.takeaways {
+  margin-top: 20px;
+  padding: 30px;
+  border-radius: 10px;
+  background: var(--white);
+}
+.takeaways ul {
+  margin: 16px 0 0;
+  list-style: disc;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.cta {
+  margin-top: 60px;
+  padding: 30px;
+  border-radius: 10px;
+  background: var(--dark);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.cta p {
+  margin: 0;
+}
+.ctaBtn {
+  padding: 14px 24px;
+  border-radius: 6px;
+  background: var(--white);
+  color: var(--black);
+  transition: opacity 0.3s;
+}
+.ctaBtn:hover {
+  opacity: 0.85;
+}
+.next {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 40px;
+  padding: 30px 0;
+  border-top: 2px solid var(--black);
+}
+
+@media (max-width: 1199.98px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 809.98px) {
+  .page {
+    padding-top: 110px;
+  }
+  .grid,
+  .compare {
+    grid-template-columns: 1fr;
+  }
+  .steps li {
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px;
+  }
+}

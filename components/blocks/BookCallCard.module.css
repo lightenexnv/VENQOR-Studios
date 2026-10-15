@@ -15,7 +15,7 @@
 .frame {
   flex: 1;
   min-width: 0;
-  height: 200px;
+  min-height: 200px; /* grows with longer copy instead of squashing the button */
   box-sizing: border-box;
   padding: 25px 30px;
   border-radius: 8px;
@@ -38,13 +38,14 @@
   margin: 12px 0 18px;
 }
 .button {
+  flex: none;
   width: 100%;
   height: 40px;
 }
 .media {
   position: relative;
   flex: 0 0 101px;
-  height: 200px;
+  min-height: 200px; /* stretches to match the text panel */
   border-radius: 8px;
   overflow: hidden;
 }

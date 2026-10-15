@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 544" width="340" height="544"><defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#16181F"/><stop offset="1" stop-color="#0B0C10"/></linearGradient>
+<linearGradient id="ir" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7CF3FF"/><stop offset=".5" stop-color="#8E7DFF"/><stop offset="1" stop-color="#FF7BD5"/></linearGradient>
+<linearGradient id="ir2" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FF9A6B"/><stop offset=".5" stop-color="#FF7BD5"/><stop offset="1" stop-color="#7CF3FF"/></linearGradient>
+<radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#8E7DFF" stop-opacity=".55"/><stop offset="1" stop-color="#8E7DFF" stop-opacity="0"/></radialGradient>
+<filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>
+</defs>
+<rect width="340" height="544" fill="url(#bg)"/>
+<circle cx="170" cy="250" r="190" fill="url(#glow)"/>
+<g transform="translate(95 70)">
+<rect width="150" height="310" rx="26" fill="#0B0C10" stroke="url(#ir)" stroke-width="3"/>
+<rect x="10" y="10" width="130" height="290" rx="18" fill="#1C1F29"/><rect x="55" y="16" width="40" height="10" rx="5" fill="#0B0C10"/>
+<circle cx="32" cy="50" r="10" fill="url(#ir2)"/><rect x="50" y="44" width="60" height="6" rx="3" fill="#fff" fill-opacity=".6"/><rect x="50" y="54" width="40" height="5" rx="2.5" fill="#fff" fill-opacity=".25"/>
+<rect x="20" y="74" width="110" height="80" rx="10" fill="url(#ir)"/><path d="M28 140 l18 -22 l14 12 l18 -26 l20 20 l24 -14" fill="none" stroke="#0B0C10" stroke-opacity=".6" stroke-width="3" stroke-linecap="round"/>
+<rect x="20" y="164" width="52" height="52" rx="10" fill="#fff" fill-opacity=".08"/><rect x="78" y="164" width="52" height="52" rx="10" fill="#fff" fill-opacity=".08"/>
+<rect x="20" y="224" width="110" height="34" rx="10" fill="#fff" fill-opacity=".08"/>
+<path d="M10 268 h130 v14 a18 18 0 0 1 -18 18 h-94 a18 18 0 0 1 -18 -18 Z" fill="#232733"/><circle cx="40" cy="284" r="5" fill="#7CF3FF"/><circle cx="75" cy="284" r="5" fill="#fff" fill-opacity=".4"/><circle cx="110" cy="284" r="5" fill="#fff" fill-opacity=".4"/></g>
+<g transform="translate(38 120) rotate(-10)"><rect width="46" height="46" rx="13" fill="url(#ir2)"/><path d="M15 23 l6 6 l11 -13" fill="none" stroke="#0B0C10" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g transform="translate(262 230) rotate(12)"><rect width="46" height="46" rx="13" fill="#232733" stroke="#fff" stroke-opacity=".3"/><path d="M14 30 l9 -16 l9 16 Z" fill="#7CF3FF"/></g>
+<g transform="translate(60 438)" font-family="monospace" font-size="13" fill="#fff"><rect x="-12" y="-22" width="244" height="62" rx="12" fill="#0B0C10" stroke="#fff" stroke-opacity=".15"/>
+<text y="0" fill-opacity=".8">Flutter  &#183;  Swift</text><text y="22" fill-opacity=".5">iOS &#183; Android &#183; Store-ready</text></g></svg>
