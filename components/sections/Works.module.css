@@ -1,0 +1,197 @@
+.container {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+/* ---------- heading: [03] | FEATURED WORKS | 12 [VIEW ALL] ---------- */
+.heading {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+  height: 28px;
+  align-items: center;
+}
+.number {
+  margin-left: -6px;
+}
+.label {
+  margin: 0;
+}
+.count {
+  position: relative;
+  height: 28px;
+}
+.countNum {
+  position: absolute;
+  right: -1px;
+  top: 130px;
+  text-align: right;
+  letter-spacing: -3.6px;
+  text-transform: uppercase;
+}
+.viewAll {
+  position: absolute;
+  right: -2px;
+  top: -1px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+.vertical {
+  display: block;
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 0.18em;
+}
+
+/* ---------- content grid ---------- */
+.content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+  padding-top: 90px;
+  align-items: start;
+}
+.metricsCol {
+  position: sticky;
+  top: 120px;
+  z-index: 1;
+  padding-right: 50px;
+  display: flex;
+  flex-direction: column;
+}
+.intro {
+  margin: 0 0 110px; /* 10 gap + 90 spacer + 10 gap */
+}
+.metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 65px;
+}
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.metricValue {
+  white-space: pre;
+}
+.metricLabel {
+  margin: 0;
+}
+.metricText {
+  margin: 15px 0 0; /* 5 + 10 spacer */
+}
+.cards {
+  grid-column: span 2;
+  display: flex;
+  gap: 100px;
+}
+.col {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.colOffset {
+  padding-top: 130px;
+}
+
+/* ---------- tablet ---------- */
+@media (max-width: 1199.98px) {
+  .container {
+    padding: 60px 30px;
+  }
+  .number {
+    margin-left: -6px;
+  }
+  .countNum {
+    top: -12px;
+    right: 45px;
+    letter-spacing: -0.06em;
+  }
+  .content {
+    padding-top: 120px;
+  }
+  .metricsCol {
+    top: 100px;
+    padding-right: 20px;
+  }
+  .intro {
+    margin-bottom: 60px;
+  }
+  .metrics {
+    gap: 40px;
+  }
+  .cards {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .col {
+    gap: 30px;
+  }
+  .colOffset {
+    padding-top: 0;
+  }
+}
+
+/* ---------- phone ---------- */
+@media (max-width: 809.98px) {
+  .container {
+    padding: 20px 25px 40px;
+  }
+  .heading {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    height: 127px;
+  }
+  .number {
+    position: absolute;
+    left: -4px;
+    top: 17px;
+    margin: 0;
+  }
+  .count {
+    position: absolute;
+    inset: 0;
+    height: auto;
+  }
+  .countNum {
+    top: 69px;
+    right: 28px;
+    letter-spacing: -0.04em;
+  }
+  .viewAll {
+    top: 12px;
+    right: -16px;
+  }
+  .content {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 50px;
+    padding-top: 30px;
+  }
+  .metricsCol {
+    position: static;
+    padding-right: 0;
+  }
+  .intro {
+    margin-bottom: 40px;
+  }
+  .metrics {
+    gap: 30px;
+  }
+  .metricText {
+    margin-top: 10px;
+  }
+  .cards,
+  .col {
+    gap: 15px;
+  }
+}

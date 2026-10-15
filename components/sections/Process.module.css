@@ -1,0 +1,256 @@
+.section {
+  overflow: clip;
+}
+.outer {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 90px 0;
+}
+.block {
+  padding: 2px;
+  border-radius: 10px;
+  background: var(--white);
+}
+.content {
+  background: var(--dark);
+  border-radius: 8px;
+  padding: 160px 100px;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ---------- steps grid (two columns, alternating) ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 100px;
+  align-items: start;
+}
+.rotor {
+  grid-column: 1 / -1;
+  position: sticky;
+  top: 350px;
+  z-index: 1;
+  height: 380px;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+.rotorStage {
+  width: 400px;
+  height: 380px;
+}
+.step {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.n,
+.title,
+.text,
+.time {
+  margin: 0;
+}
+.title {
+  margin-top: 20px;
+}
+.text {
+  margin-top: 65px;
+  max-width: 400px;
+  color: var(--white-70);
+}
+.time {
+  margin-top: 28px;
+}
+.left {
+  grid-column: 1;
+  align-items: flex-start;
+}
+.right {
+  grid-column: 2;
+  align-items: flex-end;
+  text-align: right;
+  padding: 350px 0 80px;
+}
+
+/* ---------- Contact Manager bar ---------- */
+.cta {
+  position: relative;
+  margin-top: 40px;
+  height: 85px;
+  border-radius: 8px;
+  background: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.4s var(--spring);
+}
+.cta:hover {
+  background: var(--white);
+}
+.ctaLabel {
+  position: relative;
+  z-index: 5;
+  color: var(--white);
+  mix-blend-mode: difference;
+}
+.ctaImages {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+}
+.ctaImages img {
+  position: absolute;
+  transition: transform 0.5s var(--spring);
+}
+.phone {
+  left: calc(50% - 222px);
+  top: -32px;
+  width: 88px;
+  height: 88px;
+}
+.email {
+  left: calc(50% - 186px);
+  top: 49px;
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+}
+.manager {
+  left: calc(50% + 145px);
+  bottom: 0;
+  width: 106px;
+  height: 101px;
+}
+.cta:hover .phone {
+  transform: translateY(-6px) rotate(-6deg);
+}
+.cta:hover .email {
+  transform: translateY(4px) rotate(6deg);
+}
+
+/* ---------- tablet ---------- */
+@media (max-width: 1199.98px) {
+  .outer {
+    padding: 60px 0;
+  }
+  .content {
+    padding: 60px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    row-gap: 80px;
+  }
+  .rotor {
+    top: 300px;
+    height: 300px;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  .rotorStage {
+    width: 300px;
+    height: 300px;
+  }
+  .left,
+  .right {
+    grid-column: 1;
+    align-items: flex-start;
+    text-align: left;
+    padding: 0;
+    width: 50%;
+  }
+  .text {
+    margin-top: 35px;
+  }
+  .cta {
+    margin-top: 90px;
+    height: 75px;
+    width: 686px;
+    max-width: 100%;
+  }
+  .phone {
+    left: 111px;
+    top: -31px;
+    width: 78px;
+    height: 78px;
+  }
+  .email {
+    left: 164px;
+    top: 48px;
+    width: 51px;
+    height: 51px;
+  }
+  .manager {
+    left: 487px;
+    width: 101px;
+    height: 96px;
+  }
+}
+
+/* ---------- phone ---------- */
+@media (max-width: 809.98px) {
+  .outer {
+    padding: 40px 0;
+  }
+  .content {
+    padding: 50px 30px;
+  }
+  .grid {
+    row-gap: 50px;
+    padding-top: 30px;
+  }
+  .rotor {
+    position: relative;
+    top: 0;
+    height: 280px;
+    justify-content: center;
+  }
+  .rotorStage {
+    width: 100%;
+    height: 280px;
+  }
+  .left,
+  .right {
+    width: 100%;
+  }
+  /* reference has empty desktop-only cells between phone steps (+50 gap +1px) */
+  .step + .step {
+    margin-top: 51px;
+  }
+  .title {
+    margin-top: 20px;
+  }
+  .text {
+    margin-top: 20px;
+  }
+  .time {
+    margin-top: 20px;
+  }
+  .cta {
+    margin-top: 55px;
+    width: 100%;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+  .phone {
+    left: 5px;
+    top: -19px;
+    width: 56px;
+    height: 56px;
+  }
+  .email {
+    left: 18px;
+    top: 36px;
+    width: 51px;
+    height: 51px;
+  }
+  .manager {
+    left: auto;
+    right: 1px;
+    width: 89px;
+    height: 85px;
+  }
+}

@@ -1,0 +1,73 @@
+.btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  isolation: isolate;
+  text-align: center;
+  padding: 0;
+}
+.light {
+  background: var(--white);
+  color: var(--black);
+}
+.dark {
+  background: var(--black);
+  color: var(--white);
+}
+.fill {
+  position: absolute;
+  left: -3%;
+  width: 106%;
+  height: 52%;
+  z-index: 1;
+  transition: transform 0.5s var(--spring);
+  pointer-events: none;
+}
+.light .fill {
+  background: var(--black);
+}
+.dark .fill {
+  background: var(--white);
+}
+.top {
+  top: 0;
+  transform: translateY(-100%);
+}
+.bottom {
+  bottom: 0;
+  transform: translateY(100%);
+}
+.label {
+  position: relative;
+  z-index: 2;
+  transition: color 0.35s var(--spring);
+}
+.btn:hover:not(.disabled) .top,
+.btn:hover:not(.disabled) .bottom,
+.btn:focus-visible .top,
+.btn:focus-visible .bottom {
+  transform: translateY(0);
+}
+.light:hover:not(.disabled) .label,
+.light:focus-visible .label {
+  color: var(--white);
+}
+.dark:hover:not(.disabled) .label,
+.dark:focus-visible .label {
+  color: var(--black);
+}
+.disabled {
+  cursor: default;
+}
+.disabled .label {
+  opacity: 0.5;
+}
+.btn:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}

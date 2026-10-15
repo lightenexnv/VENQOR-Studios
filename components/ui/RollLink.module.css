@@ -1,0 +1,38 @@
+.link {
+  position: relative;
+  display: inline-flex;
+  overflow: clip;
+  white-space: nowrap;
+}
+.label {
+  display: block;
+  transition: transform 0.45s var(--spring);
+  will-change: transform;
+}
+.copy {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Top nav: original drops out, copy drops in from above */
+.down .copy {
+  transform: translateY(-110%);
+}
+.down:hover .label:not(.copy) {
+  transform: translateY(110%);
+}
+.down:hover .copy {
+  transform: translateY(0);
+}
+
+/* Footer / menu: original exits left, copy enters from the right */
+.left .copy {
+  transform: translateX(110%);
+}
+.left:hover .label:not(.copy) {
+  transform: translateX(-110%);
+}
+.left:hover .copy {
+  transform: translateX(0);
+}

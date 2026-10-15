@@ -1,0 +1,16 @@
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.label {
+  margin: 0;
+}
+.number {
+  margin-right: -5px;
+  white-space: nowrap;
+}
+.light {
+  color: var(--white);
+}

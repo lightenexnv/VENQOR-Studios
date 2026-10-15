@@ -1,0 +1,329 @@
+.section {
+  overflow: hidden;
+}
+.container {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 70px;
+  align-items: start;
+}
+
+/* ---------- FAQ ---------- */
+.faq {
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.heading h2 {
+  margin: 0;
+}
+.number {
+  margin-right: -6px;
+}
+.list {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.list::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  background: var(--black);
+  z-index: 1;
+}
+.item {
+  position: relative;
+}
+.item::after {
+  content: "";
+  position: absolute;
+  left: 1px;
+  right: -1px;
+  bottom: 0;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.15);
+}
+.q {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 25px 0 25px;
+  border: 0;
+  background: none;
+  color: var(--black);
+  text-align: left;
+  cursor: pointer;
+}
+.q > span:last-child {
+  transition: transform 0.45s var(--spring);
+}
+.arrow {
+  position: absolute;
+  left: 2px;
+  top: 50%;
+  width: 12px;
+  height: 6px;
+  margin-top: -3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition:
+    opacity 0.35s var(--spring),
+    transform 0.45s var(--spring);
+}
+.q:hover > span:last-child,
+.open .q > span:last-child {
+  transform: translateX(25px);
+}
+.q:hover .arrow {
+  opacity: 0.6;
+}
+.open .arrow {
+  opacity: 0.6;
+  transform: rotate(180deg);
+}
+/* answer: grid-rows trick animates height */
+.a {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s var(--spring);
+}
+.aInner {
+  overflow: hidden;
+}
+.aInner p {
+  margin: 0;
+  padding: 0 0 15px;
+}
+.open .a {
+  grid-template-rows: 1fr;
+}
+.open .q {
+  padding-bottom: 25px;
+}
+
+/* ---------- Start a Project ---------- */
+.contact {
+  display: flex;
+  flex-direction: column;
+  scroll-margin-top: 40px;
+}
+.contactHead {
+  display: flex;
+  align-items: flex-end;
+  height: 250px;
+}
+.contactText {
+  flex: 0 0 405px;
+  align-self: stretch;
+  padding-bottom: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.contactText h2 {
+  margin: 0;
+}
+.lead {
+  margin: 0;
+  color: var(--text-70);
+}
+.kate {
+  position: relative;
+  flex: 1;
+  height: 250px;
+  display: flex;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+.kate img {
+  width: 240px;
+  height: 250px;
+  object-fit: contain;
+  object-position: bottom right;
+}
+.kate span {
+  position: absolute;
+  right: 65px;
+  bottom: 30px;
+  text-align: right;
+  color: var(--white);
+  mix-blend-mode: difference;
+}
+.formCard {
+  padding: 2px;
+  border-radius: 10px;
+  background: var(--white);
+}
+.form {
+  padding: 45px 50px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.field input,
+.field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  background: transparent;
+  outline: none;
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 25px;
+  letter-spacing: 0.02em;
+  color: var(--black);
+  transition: border-color 0.3s;
+}
+.field input {
+  height: 50px;
+  padding: 0;
+}
+.field textarea {
+  height: 90px;
+  padding: 10px 0 0;
+  resize: none;
+}
+.field input::placeholder,
+.field textarea::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+.field input:focus,
+.field textarea:focus {
+  border-bottom-color: var(--black);
+}
+.send {
+  height: 50px;
+}
+.terms {
+  margin: 0;
+  padding: 17px;
+  border-radius: 9px;
+  background: var(--bg-2);
+  text-align: center;
+}
+.terms a {
+  color: var(--black);
+}
+
+/* ---------- tablet ---------- */
+@media (max-width: 1199.98px) {
+  .container {
+    padding: 60px 30px;
+  }
+  .faq {
+    gap: 60px;
+  }
+  .q {
+    padding: 20px 22px 20px 0;
+  }
+  .arrow {
+    left: auto;
+    right: 0;
+    opacity: 1;
+  }
+  .q:hover > span:last-child,
+  .open .q > span:last-child {
+    transform: none;
+  }
+  .q:hover .arrow {
+    opacity: 1;
+  }
+  .open .arrow {
+    opacity: 1;
+  }
+  .open .q {
+    padding-bottom: 20px;
+  }
+  .item::after {
+    left: 1px;
+  }
+  .aInner p {
+    padding-bottom: 25px;
+  }
+  .contactHead {
+    height: 210px;
+  }
+  .contactText {
+    flex: 0 0 244px;
+    padding-bottom: 25px;
+    gap: 15px;
+  }
+  .kate {
+    height: 200px;
+  }
+  .kate img {
+    width: 191px;
+    height: 200px;
+  }
+  .kate span {
+    right: 35px;
+    bottom: 20px;
+  }
+  .form {
+    padding: 35px 30px 25px;
+  }
+}
+
+/* ---------- phone ---------- */
+@media (max-width: 809.98px) {
+  .container {
+    padding: 40px 25px;
+    grid-template-columns: 1fr;
+    row-gap: 70px;
+  }
+  .faq {
+    padding-top: 0;
+    gap: 30px;
+  }
+  .contactHead {
+    gap: 10px;
+  }
+  .contactText {
+    flex: 0 0 191px;
+  }
+  .kate {
+    height: 145px;
+  }
+  .kate img {
+    width: 139px;
+    height: 145px;
+  }
+  .kate span {
+    right: 25px;
+    bottom: 15px;
+  }
+  .row {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .field {
+    gap: 5px;
+  }
+}

@@ -1,0 +1,204 @@
+.section {
+  overflow: hidden;
+}
+.container {
+  padding-top: 140px;
+  padding-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 65px; /* 10 gap + 45 spacer + 10 gap */
+}
+
+/* ---------- [01] statement ---------- */
+.welcome {
+  position: relative;
+  padding-right: 30px;
+}
+.statement {
+  margin: 0;
+}
+.number {
+  position: absolute;
+  left: 0;
+  top: 13px;
+}
+.more {
+  position: absolute;
+  right: 2px;
+  top: 7px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+.moreText {
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 0.18em;
+  display: block;
+}
+
+/* ---------- image + paragraph + stack ---------- */
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 315px;
+}
+.lead {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+.image {
+  position: relative;
+  flex: 0 0 380px;
+  height: 150px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: linear-gradient(rgb(187, 183, 184) 0%, rgb(216, 215, 215) 100%);
+}
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.body {
+  flex: 1;
+  margin: 0;
+  height: 150px;
+  box-sizing: border-box;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+}
+.body {
+  display: block;
+  padding-top: 2px;
+}
+.indent {
+  display: inline-block;
+  width: 39px;
+}
+.stack {
+  position: relative;
+  flex: 0 0 408px;
+  height: 315px;
+  box-sizing: border-box;
+  padding: 10px 50px 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.stackTitle {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  white-space: nowrap;
+}
+.sphere {
+  width: 358px;
+  height: 305px;
+}
+
+/* ---------- tablet ---------- */
+@media (max-width: 1199.98px) {
+  .container {
+    padding-top: 120px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    gap: 40px;
+  }
+  .welcome {
+    padding-right: 40px;
+  }
+  .content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 60px;
+    height: auto;
+  }
+  .lead {
+    width: 100%;
+    flex: none;
+  }
+  .body {
+    padding: 0 0 0 45px;
+  }
+  .stack {
+    flex: none;
+    width: 564px;
+    height: 335px;
+    padding: 30px 20px 0 0;
+    align-items: center;
+  }
+  .stackTitle {
+    top: -5px;
+  }
+  .sphere {
+    width: 450px;
+  }
+}
+
+/* ---------- phone ---------- */
+@media (max-width: 809.98px) {
+  .container {
+    padding: 80px 25px 30px;
+    gap: 45px;
+  }
+  .welcome {
+    padding-right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px;
+  }
+  .statement {
+    align-self: stretch;
+  }
+  .number {
+    left: -4px;
+    top: 0;
+  }
+  .more {
+    position: static;
+    writing-mode: horizontal-tb;
+    transform: none;
+    padding: 17px 0;
+    margin-right: -7px;
+  }
+  .content {
+    gap: 30px;
+  }
+  .lead {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .image {
+    flex: none;
+    width: 100%;
+    height: 0; /* collapsed on phone like the reference, but keeps its gap */
+  }
+  .body {
+    height: auto;
+    padding: 0;
+  }
+  .stack {
+    width: 100%;
+    height: 365px;
+    padding: 60px 20px 0 0;
+  }
+  .stackTitle {
+    top: 10px;
+  }
+  .sphere {
+    width: 320px;
+  }
+}

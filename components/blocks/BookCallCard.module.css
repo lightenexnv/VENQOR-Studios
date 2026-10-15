@@ -1,0 +1,142 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 340px;
+}
+.book {
+  display: flex;
+  gap: 2px;
+  padding: 2px;
+  border-radius: 10px;
+  background: var(--white);
+  overflow: hidden;
+}
+.frame {
+  flex: 1;
+  min-width: 0;
+  height: 200px;
+  box-sizing: border-box;
+  padding: 25px 30px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+}
+.title {
+  margin: 0;
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 22px;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+.text {
+  margin: 12px 0 18px;
+}
+.button {
+  width: 100%;
+  height: 40px;
+}
+.media {
+  position: relative;
+  flex: 0 0 101px;
+  height: 200px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.still,
+.video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.video {
+  z-index: 1;
+}
+.name {
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  color: var(--white);
+  mix-blend-mode: difference;
+  z-index: 2;
+}
+
+/* light (hero) */
+.light .frame,
+.light .media {
+  background: var(--bg);
+}
+.light .text {
+  color: var(--text-70);
+}
+.founders {
+  height: 85px;
+  box-sizing: border-box;
+  padding: 0 32px;
+  border-radius: 10px;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.faces {
+  position: relative;
+  width: 130px;
+  height: 40px;
+}
+.face {
+  position: absolute;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.face img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* dark (footer) */
+.dark {
+  width: 320px;
+}
+.dark .frame,
+.dark .media {
+  background: var(--dark);
+}
+.dark .title {
+  color: var(--white);
+}
+.dark .text {
+  color: var(--white-70);
+}
+.dark .name {
+  text-align: center;
+}
+
+@media (min-width: 810px) and (max-width: 1199.98px) {
+  .light {
+    width: 310px;
+  }
+}
+@media (max-width: 809.98px) {
+  .light,
+  .dark {
+    width: 100%;
+  }
+}

@@ -1,0 +1,260 @@
+.container {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+/* ---------- heading: [05] + wavy TESTIMONIALS ---------- */
+.heading {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+  height: 100px;
+  align-items: center;
+}
+.number {
+  margin-left: -5px;
+}
+.wave {
+  height: 100px;
+}
+
+/* ---------- layouts ---------- */
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 40px;
+  padding-top: 40px;
+  align-items: start;
+}
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px 40px;
+  padding-top: 40px;
+  align-items: end;
+}
+.grid2 > :nth-child(n + 3) {
+  align-self: start;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  min-width: 0;
+}
+.colTight {
+  gap: 50px;
+}
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding-top: 40px;
+}
+
+/* ---------- clients cards ---------- */
+.clients {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.photo {
+  width: 100%;
+  aspect-ratio: 427 / 184;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 32px 40px 45px;
+  border-radius: 10px;
+  background: var(--white);
+}
+.statRight {
+  align-items: flex-end;
+  text-align: right;
+}
+.statValue {
+  display: block;
+}
+.statLabel {
+  display: block;
+}
+.logos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  height: 195px;
+  border-radius: 10px;
+  background: var(--white);
+  overflow: hidden;
+}
+.markImg {
+  width: 30px;
+  height: 30px;
+}
+
+/* ---------- testimonial block ---------- */
+.quoteWrap {
+  display: flex;
+  flex-direction: column;
+}
+.offset {
+  padding-top: 70px;
+}
+.quote {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 2px;
+  border-radius: 10px;
+  background: var(--white);
+  overflow: hidden;
+}
+.text {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 65px 45px 85px;
+  border-radius: 8px;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.from {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 17px;
+  padding: 70px 40px 40px;
+  border-radius: 8px;
+  background: var(--bg-2);
+}
+.mark {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mark img {
+  width: 40px;
+  height: 40px;
+}
+.role {
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: var(--white);
+  white-space: nowrap;
+}
+
+/* ---------- phone carousel ---------- */
+.carousel {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+}
+.track {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.track::-webkit-scrollbar {
+  display: none;
+}
+.slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+}
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 28px;
+  box-sizing: border-box;
+  padding: 0 12px;
+  border-radius: 20px;
+  background: var(--white);
+}
+.dots button {
+  width: 5px;
+  height: 5px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.dots .dotActive {
+  background: var(--black);
+}
+
+/* ---------- tablet ---------- */
+@media (max-width: 1199.98px) {
+  .container {
+    padding: 60px 30px;
+  }
+  .heading {
+    grid-template-columns: 1fr 1fr;
+  }
+  .col {
+    gap: 30px;
+  }
+  .photo {
+    aspect-ratio: 450 / 194;
+  }
+  .stat {
+    padding: 26px 35px 34px;
+  }
+  .logos {
+    height: 171px;
+  }
+  .text {
+    padding: 40px 35px 65px;
+  }
+  .from {
+    padding: 60px 40px 30px;
+  }
+}
+
+/* ---------- phone ---------- */
+@media (max-width: 809.98px) {
+  .container {
+    padding: 40px 25px;
+  }
+  .heading {
+    display: flex;
+    gap: 10px;
+  }
+  .number {
+    flex: 0 0 100px;
+    margin-left: -4px;
+  }
+  .wave {
+    flex: 1;
+  }
+  .stat {
+    padding: 30px 35px 34px;
+  }
+  .logos {
+    height: 148px;
+  }
+  .text {
+  }
+}

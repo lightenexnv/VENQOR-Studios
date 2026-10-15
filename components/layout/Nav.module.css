@@ -1,0 +1,216 @@
+/* ---------- Logo ---------- */
+.logo {
+  position: fixed;
+  left: 30px;
+  top: 26px;
+  z-index: 40;
+  mix-blend-mode: difference;
+}
+.logo img {
+  width: 30px;
+  height: 41px;
+}
+
+/* ---------- Centered links (desktop) ---------- */
+.links {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  height: 92px;
+  padding: 0 20px;
+  mix-blend-mode: difference;
+  color: var(--white);
+}
+.link {
+  padding: 0 20px 1px;
+}
+
+/* ---------- Burger + panel ---------- */
+.menuWrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 45;
+}
+.burger {
+  position: fixed;
+  top: 17px;
+  right: 30px;
+  width: 80px;
+  height: 58px;
+  border: 0;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  z-index: 3;
+}
+.burgerBg {
+  position: absolute;
+  inset: 0;
+  background: var(--white);
+  border-radius: 8px;
+  transition: opacity 0.3s var(--spring);
+}
+.bars {
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  width: 46px;
+  height: 26px;
+}
+.bars i {
+  position: absolute;
+  left: 0;
+  height: 2px;
+  background: var(--black);
+  transition:
+    transform 0.5s var(--spring),
+    opacity 0.3s var(--spring),
+    width 0.5s var(--spring);
+}
+.bars i:nth-child(1) {
+  top: 0;
+  width: 45px;
+}
+.bars i:nth-child(2) {
+  top: 10px;
+  width: 31px;
+}
+.bars i:nth-child(3) {
+  top: 20px;
+  width: 45px;
+}
+/* open (desktop): the three bars collapse into a single line */
+.isOpen .burgerBg {
+  opacity: 0;
+}
+.isOpen .bars i:nth-child(1) {
+  transform: translateY(6px);
+}
+.isOpen .bars i:nth-child(2) {
+  transform: translateX(50px);
+  opacity: 0;
+}
+.isOpen .bars i:nth-child(3) {
+  transform: translateY(-14px);
+}
+
+.panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 100vh;
+  height: 100dvh;
+  box-sizing: border-box;
+  padding: 60px 40px 50px 50px;
+  background: var(--white);
+  border-radius: 8px 0 0 8px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 2;
+  color: var(--black);
+}
+.panelLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 35px;
+  padding: 30px 20px 0 0;
+}
+.panelLinks a {
+  padding-bottom: 1px;
+}
+.panelInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  max-width: 310px;
+}
+.panelFollow {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px 25px;
+}
+.socials a {
+  display: flex;
+  padding: 5px;
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s;
+}
+.socials a:hover {
+  opacity: 0.6;
+}
+.socials img {
+  width: 30px;
+  height: 30px;
+  filter: invert(1);
+}
+.scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 44;
+  border: 0;
+  background: transparent;
+  cursor: default;
+}
+
+/* ---------- Tablet + phone ---------- */
+@media (max-width: 1199.98px) {
+  .logo {
+    left: 25px;
+  }
+  .links {
+    display: none;
+  }
+  .burger {
+    top: 20px;
+    right: 25px;
+    width: 75px;
+    height: 52px;
+  }
+  .bars {
+    left: 15px;
+    top: 15px;
+  }
+  /* open (tablet/phone): bars cross into an X */
+  .isOpen .bars i:nth-child(1) {
+    width: 46px;
+    transform: translateY(11px) rotate(-31deg);
+  }
+  .isOpen .bars i:nth-child(3) {
+    width: 46px;
+    transform: translateY(-9px) rotate(31deg);
+  }
+  .panel {
+    width: 370px;
+    padding: 40px 40px 100px;
+  }
+  .panelLinks {
+    gap: 25px;
+  }
+  .panelInfo {
+    max-width: 290px;
+  }
+}
+@media (max-width: 809.98px) {
+  .panel {
+    width: calc(100vw - 20px);
+  }
+}

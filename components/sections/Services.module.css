@@ -1,0 +1,227 @@
+.section {
+  overflow: hidden;
+}
+.container {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px; /* 30 gap + 20 spacer + 30 gap */
+}
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 2px;
+  background: var(--white);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+}
+.row {
+  display: flex;
+  min-height: 155px;
+}
+.left {
+  justify-content: flex-start;
+}
+.center {
+  justify-content: center;
+}
+.right {
+  justify-content: flex-end;
+}
+
+/* ---------- desktop pill ---------- */
+.card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding: 35px 50px;
+  border-radius: 8px;
+  background: var(--bg);
+  overflow: hidden;
+  cursor: none;
+  isolation: isolate;
+}
+.title,
+.sub {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  white-space: nowrap;
+  transition: color 0.4s var(--spring);
+}
+.shutter {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.shutter::before,
+.shutter::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 51%;
+  background: var(--dark);
+  transition: transform 0.55s var(--spring);
+}
+.shutter::before {
+  top: 0;
+  transform: translateY(-101%);
+}
+.shutter::after {
+  bottom: 0;
+  transform: translateY(101%);
+}
+.card:hover .shutter::before,
+.card:hover .shutter::after,
+.accOpen .shutter::before,
+.accOpen .shutter::after {
+  transform: translateY(0);
+}
+.card:hover .title,
+.card:hover .sub {
+  color: var(--white);
+}
+
+/* accordion hidden on desktop */
+.acc {
+  display: none;
+}
+
+/* ---------- tablet + phone accordion ---------- */
+@media (max-width: 1199.98px) {
+  .container {
+    padding: 60px 30px;
+    gap: 40px;
+  }
+  .card {
+    display: none;
+  }
+  .row {
+    min-height: 0;
+  }
+  /* reference alternates left / right / center on smaller screens */
+  .row:nth-child(3n + 1) {
+    justify-content: flex-start;
+  }
+  .row:nth-child(3n + 2) {
+    justify-content: flex-end;
+  }
+  .row:nth-child(3n) {
+    justify-content: center;
+  }
+  .acc {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+    padding: 25px 40px;
+    border-radius: 8px;
+    background: var(--bg);
+    overflow: hidden;
+    isolation: isolate;
+    transition: padding 0.4s var(--spring);
+  }
+  .accOpen {
+    flex: 1;
+    padding: 35px 40px 40px;
+  }
+  .accHead {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--black);
+    cursor: pointer;
+    text-align: left;
+    white-space: nowrap;
+    transition: color 0.4s var(--spring);
+  }
+  .chevron {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 12px;
+    height: 6px;
+    transition: transform 0.4s var(--spring);
+  }
+  .accOpen .accHead {
+    color: var(--white);
+  }
+  .accOpen .chevron {
+    transform: rotate(180deg);
+  }
+  .accBody {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  .accBody[hidden] {
+    display: none;
+  }
+  .accSub {
+    margin: 0;
+    color: var(--white-70);
+  }
+  .accRow {
+    display: flex;
+    align-items: flex-end;
+    gap: 60px;
+  }
+  .accText {
+    flex: 1;
+    margin: 0;
+    color: var(--white);
+  }
+  .accImg {
+    flex: 0 0 150px;
+    width: 150px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 809.98px) {
+  .container {
+    padding: 40px 0;
+    gap: 30px;
+  }
+  .container > :first-child {
+    padding: 0 20px 0 25px;
+  }
+  .acc {
+    padding: 15px 22px;
+  }
+  .accOpen {
+    padding: 30px 25px 26px;
+  }
+  .accHead {
+    gap: 12px;
+  }
+  .accRow {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 40px;
+  }
+  .accImg {
+    flex: none;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 336 / 538;
+  }
+}
