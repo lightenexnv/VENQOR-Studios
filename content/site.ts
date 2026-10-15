@@ -41,6 +41,7 @@ export const SITE = {
     { label: "Studio", href: "/#agency" },
     { label: "Work", href: "/#projects" },
     { label: "Insights", href: "/#blog" },
+    { label: "Founders", href: "/#founders" },
     { label: "Contact", href: "/#contact" },
   ],
 
@@ -48,7 +49,7 @@ export const SITE = {
     email: "contact@venqor.com",
     emailHref: "mailto:contact@venqor.com",
     phones: [
-      { label: "Yojasvi", value: "+91 70739 99605", href: "tel:+917073999605" },
+      { label: "Yojasvi Choudhary", value: "+91 70739 99605", href: "tel:+917073999605" },
       { label: "Neil Verma", value: "+91 93066 28339", href: "tel:+919306628339" },
     ],
     // Keep address as region line — no single street address public yet
@@ -95,7 +96,7 @@ export const SITE = {
     more: "[MORE ABOUT US]",
     image: `${A}/about/about.jpg`,
     body: [
-      "VENQOR Studios is a two-founder studio. Neil Verma leads development, Yojasvi leads marketing and operations. Backed by a small senior team, we ship together \u2014 every project has clear ownership and no hand-offs. ",
+      "VENQOR Studios is a two-founder studio. Neil Verma leads development, Yojasvi Choudhary leads marketing and operations. Backed by a small senior team, we ship together \u2014 every project has clear ownership and no hand-offs. ",
       "We build every kind of website \u2014 3D and interactive, static, dynamic, headless, e-commerce, and portfolios \u2014 plus iOS and cross-platform apps. From development to deployment and long-term maintenance, we stay on so large-scale projects keep getting better after launch. ",
       "Every build is SEO-compatible by default: clean code, fast pages, and structure that both Google and AI search can understand. We don\u2019t sell SEO \u2014 we build sites that are ready to rank.",
     ],
@@ -241,37 +242,31 @@ export const SITE = {
       {
         n: "[001]",
         title: "Discover",
-        time: "2\u20134 days",
         text: "We get clear on your goals, audience, and constraints. We look at what\u2019s live, what\u2019s working, and what\u2019s blocking growth \u2014 so we agree on what success looks like before we design anything.",
       },
       {
         n: "[002]",
         title: "Define",
-        time: "2\u20134 days",
         text: "We turn goals into a clear scope, timeline, and measurable outcomes. Roadmap, responsibilities, and what we\u2019ll track \u2014 all written down so there are no surprises.",
       },
       {
         n: "[003]",
         title: "Design",
-        time: "1\u20132 weeks",
         text: "We explore directions, then lock a modular design system \u2014 layout, type, motion, and 3D where it adds value. Content structure and accessibility are specified so build is predictable.",
       },
       {
         n: "[004]",
         title: "Build",
-        time: "1\u20132 weeks",
         text: "We build fast, maintainable products \u2014 MERN for web, Flutter and Swift for apps \u2014 with CMS, payments, and analytics from day one. Performance budgets and QA run continuously.",
       },
       {
         n: "[005]",
         title: "Launch",
-        time: "2\u20134 days",
         text: "We ship with a checklist: QA, Core Web Vitals, redirects, tracking, and security. We watch the first 72 hours closely and fix fast. Your team gets editing training and docs.",
       },
       {
         n: "[006]",
         title: "Improve",
-        time: "2\u20133 weeks",
         text: "We improve in focused sprints \u2014 experiments, content, and performance \u2014 driven by real data. Small releases, steady growth, and ongoing care for large-scale products.",
       },
     ],
@@ -326,28 +321,28 @@ export const SITE = {
           "VENQOR built a clean, fast brand store that actually feels premium. The site loads quickly, tells the story clearly, and keeps customers moving toward checkout. Communication was direct and every decision was documented.",
       },
       {
-        name: "Client \u2014 E-Commerce, Shopify",
-        role: "DT VR Universe \u00B7 E-Commerce \u00B7 Shopify",
+        name: "Client — AI Platform, Landing Page",
+        role: "Aset · AI Investment Platform · Framer",
         mark: `${A}/testimonials/mark-2.svg`,
-        project: "DT VR Universe",
-        initial: "D",
-        site: "",
-        preview: `${A}/services/ecommerce.svg`,
+        project: "Aset",
+        initial: "A",
+        site: "https://aset.framer.website/",
+        preview: `${A}/works/aset-1.jpg`,
         year: "2025",
         quote:
-          "They turned a complex product catalog into a simple, fast shopping experience. Setup, payments, and integrations just work \u2014 and the team stayed on after launch to keep improving.",
+          "VENQOR delivered an exceptionally sharp, high-converting landing page for Aset that perfectly articulates our AI investment thesis. The interactions are fluid, page loading is instantaneous, and investor response has been outstanding.",
       },
       {
-        name: "Client \u2014 Portfolio Website",
-        role: "Portfolio \u00B7 3D Website",
+        name: "Client — Portfolio Website",
+        role: "Portfolio · 3D Website",
         mark: `${A}/testimonials/mark-3.svg`,
         project: "Portfolio client",
         initial: "P",
         site: "",
-        preview: `${A}/services/portfolio.svg`,
+        preview: `${A}/testimonials/portfolio-preview.jpg`,
         year: "2025",
         quote:
-          "From idea to live product, VENQOR handled design and build with clarity. The app is fast, easy to use, and ready to scale \u2014 exactly what we needed to show the product to real users quickly.",
+          "From idea to live product, VENQOR handled design and build with clarity. The site is fast, visually stunning, and ready to scale — exactly what we needed to stand out and convert visitors into clients.",
       },
       {
         name: "Client \u2014 Business Website",
@@ -392,9 +387,43 @@ export const SITE = {
     ],
   },
 
+  founders: {
+    number: "[07]",
+    label: "Founders",
+    tagline: "Direct ownership from concept to deployment. Two founders shipping together.",
+    subtext:
+      "VENQOR Studios is led by two founders with complementary expertise. Neil Verma leads all engineering and technical architecture; Yojasvi Choudhary leads marketing, brand strategy, and client operations. Backed by a small senior team, we work directly with every client \u2014 zero layers, zero hand-offs.",
+    items: [
+      {
+        name: "Neil Verma",
+        role: "Founder \u2014 Engineering",
+        focus: "Developer \u00B7 Technical Architecture",
+        desc: "Handles all coding, development, and technical execution. Specializes in immersive 3D WebGL experiences, full-stack MERN platforms, and high-performance mobile apps built for scale.",
+        image: `${A}/founders/neil-verma.png`,
+        skills: ["Three.js", "Next.js", "WebGL", "MERN Stack", "Flutter & Swift", "Architecture"],
+        phone: "+91 93066 28339",
+        phoneHref: "tel:+919306628339",
+        portfolio: "neilverma.world",
+        portfolioHref: "https://www.neilverma.world/",
+      },
+      {
+        name: "Yojasvi Choudhary",
+        role: "Founder \u2014 Marketing & Operations",
+        focus: "Marketing & Management",
+        desc: "Handles marketing, strategic growth, and client management. Directs brand positioning, business operations, and organic search readiness to turn digital products into scalable brands.",
+        image: `${A}/founders/yojasvi.png`,
+        skills: ["Brand Strategy", "Growth Marketing", "Operations", "Client Success", "SEO Strategy", "Scale"],
+        phone: "+91 70739 99605",
+        phoneHref: "tel:+917073999605",
+        portfolio: "Start a Project",
+        portfolioHref: "#contact",
+      },
+    ],
+  },
+
   faq: {
     label: "FAQ",
-    number: "[07]",
+    number: "[08]",
     items: [
       {
         q: "What do you build?",

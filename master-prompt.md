@@ -184,23 +184,25 @@ If no showreel video exists, keep `ParticleMorph` on desktop and `[Play]` still 
 
 ### 7.6 `SITE.process` — How We Work [04]
 
-Keep 6 steps, same durations, update copy to VENQOR voice:
+Keep 6 steps, **no timeline badges** (owner requested no `2–4 days` / `1–2 weeks` labels). Update copy to VENQOR voice:
 
 ```ts
 process: {
   label: "How We Work",
   number: "[04]",
   steps: [
-    { n: "[001]", title: "Discover", time: "2–4 days", text: "We get clear on your goals, audience, and constraints. We look at what's live, what's working, and what's blocking growth — so we agree on what success looks like before we design anything." },
-    { n: "[002]", title: "Define", time: "2–4 days", text: "We turn goals into a clear scope, timeline, and measurable outcomes. Roadmap, responsibilities, and what we'll track — all written down so there are no surprises." },
-    { n: "[003]", title: "Design", time: "1–2 weeks", text: "We explore directions, then lock a modular design system — layout, type, motion, and 3D where it adds value. Content structure and accessibility are specified so build is predictable." },
-    { n: "[004]", title: "Build", time: "1–2 weeks", text: "We build fast, maintainable products — MERN for web, Flutter and Swift for apps — with CMS, payments, and analytics from day one. Performance budgets and QA run continuously." },
-    { n: "[005]", title: "Launch", time: "2–4 days", text: "We ship with a checklist: QA, Core Web Vitals, redirects, tracking, and security. We watch the first 72 hours closely and fix fast. Your team gets editing training and docs." },
-    { n: "[006]", title: "Improve", time: "2–3 weeks", text: "We improve in focused sprints — experiments, content, and performance — driven by real data. Small releases, steady growth, and ongoing care for large-scale products." },
+    { n: "[001]", title: "Discover", text: "We get clear on your goals, audience, and constraints. We look at what's live, what's working, and what's blocking growth — so we agree on what success looks like before we design anything." },
+    { n: "[002]", title: "Define", text: "We turn goals into a clear scope, timeline, and measurable outcomes. Roadmap, responsibilities, and what we'll track — all written down so there are no surprises." },
+    { n: "[003]", title: "Design", text: "We explore directions, then lock a modular design system — layout, type, motion, and 3D where it adds value. Content structure and accessibility are specified so build is predictable." },
+    { n: "[004]", title: "Build", text: "We build fast, maintainable products — MERN for web, Flutter and Swift for apps — with CMS, payments, and analytics from day one. Performance budgets and QA run continuously." },
+    { n: "[005]", title: "Launch", text: "We ship with a checklist: QA, Core Web Vitals, redirects, tracking, and security. We watch the first 72 hours closely and fix fast. Your team gets editing training and docs." },
+    { n: "[006]", title: "Improve", text: "We improve in focused sprints — experiments, content, and performance — driven by real data. Small releases, steady growth, and ongoing care for large-scale products." },
   ],
   cta: "Talk to the Founders",
 }
 ```
+
+> Do not add `time` / duration fields to steps. The pill badge (`t-caps`) is removed from `Process.tsx` / `Process.module.css`.
 
 ### 7.7 `SITE.caseStudy` — Before & After [06]
 

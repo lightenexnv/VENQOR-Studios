@@ -30,6 +30,7 @@ export default function WordSphere({ words, speed = 0.0058, fontScale = 0.074, s
   const [box, setBox] = useState({ w: 0, h: 0 });
   const auto = useRef(0);
   const scrub = useRef(0);
+  const isDragging = useRef(false);
 
   useLayoutEffect(() => {
     const el = host.current!;
@@ -46,21 +47,20 @@ export default function WordSphere({ words, speed = 0.0058, fontScale = 0.074, s
   // Drag to scrub
   useEffect(() => {
     const el = host.current!;
-    let down = false,
-      lastX = 0;
+    let lastX = 0;
     const onDown = (e: PointerEvent) => {
-      down = true;
+      isDragging.current = true;
       lastX = e.clientX;
       el.setPointerCapture(e.pointerId);
       el.style.cursor = "grabbing";
     };
     const onMove = (e: PointerEvent) => {
-      if (!down) return;
+      if (!isDragging.current) return;
       scrub.current += (e.clientX - lastX) * scrubSensitivity;
       lastX = e.clientX;
     };
     const onUp = () => {
-      down = false;
+      isDragging.current = false;
       el.style.cursor = "grab";
     };
     el.addEventListener("pointerdown", onDown);
@@ -79,34 +79,42 @@ export default function WordSphere({ words, speed = 0.0058, fontScale = 0.074, s
   useEffect(() => {
     const n = Math.max(1, words.length);
     const golden = Math.PI * (3 - Math.sqrt(5));
+    // For shape="ellipse", distribute along y from -0.72 to +0.72 so points have healthy 3D orbit radii across all axes
     const pts = Array.from({ length: n }, (_, i) => {
-      const y = 1 - (i / Math.max(1, n - 1)) * 2;
-      const r = Math.sqrt(Math.max(0, 1 - y * y));
+      const y = shape === "ellipse" ? (1 - (2 * i + 1) / n) * 0.72 : 1 - (i / Math.max(1, n - 1)) * 2;
+      const r = Math.sqrt(Math.max(0.1, 1 - y * y));
       return [Math.cos(golden * i) * r, y, Math.sin(golden * i) * r];
     });
+
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let raf = 0;
     const tick = () => {
-      if (!reduce) auto.current += Math.max(0, speed);
+      if (!reduce && !isDragging.current) auto.current += Math.max(0, speed);
       const nodes = list.current?.children;
-      if (nodes && size) {
-        // ellipse: spread across the whole box (leaving room for the widest words), centred
-        const Rx = shape === "ellipse" ? box.w * 0.3 : size * 0.5;
-        const Ry = shape === "ellipse" ? box.h * 0.38 : size * 0.5;
+      if (nodes && (size || box.w)) {
         const a = auto.current + scrub.current;
         const [x, y, z] = AXIS;
         const s = Math.sin(a),
           c = Math.cos(a),
           u = 1 - c;
-        const m = [c + x * x * u, x * y * u - z * s, x * z * u + y * s, y * x * u + z * s, c + y * y * u, y * z * u - x * s, z * x * u - y * s, z * y * u + x * s, c + z * z * u];
+        const m = [
+          c + x * x * u, x * y * u - z * s, x * z * u + y * s,
+          y * x * u + z * s, c + y * y * u, y * z * u - x * s,
+          z * x * u - y * s, z * y * u + x * s, c + z * z * u,
+        ];
+
+        const Rx = shape === "ellipse" ? Math.max(120, Math.min(box.w * 0.38, box.w / 2 - 24)) : size * 0.5;
+        const Ry = shape === "ellipse" ? Math.max(50, Math.min(box.h * 0.34, 85)) : size * 0.5;
+
         for (let i = 0; i < nodes.length; i++) {
           const [px, py, pz] = pts[i];
           const rx = m[0] * px + m[1] * py + m[2] * pz;
           const ry = m[3] * px + m[4] * py + m[5] * pz;
           const rz = m[6] * px + m[7] * py + m[8] * pz;
           const el = nodes[i] as HTMLElement;
-          el.style.transform = `translate(${Rx * rx}px, ${Ry * ry}px) scale(${(rz + 2) / 3})`;
-          el.style.opacity = String(Math.max(0, Math.min(1, (rz + 1.5) / 2.5)));
+          el.style.transform = `translate3d(${Rx * rx}px, ${Ry * ry}px, 0) scale(${(rz + 2.2) / 3.2})`;
+          el.style.opacity = String(Math.max(0.3, Math.min(1, (rz + 1.5) / 2.5)));
+          el.style.zIndex = String(Math.round((rz + 1.5) * 10));
         }
       }
       raf = requestAnimationFrame(tick);
@@ -135,7 +143,7 @@ export default function WordSphere({ words, speed = 0.0058, fontScale = 0.074, s
               top: "50%",
               fontFamily: "var(--mono)",
               fontWeight: 400,
-              fontSize: Math.max(10, size * fontScale),
+              fontSize: shape === "ellipse" ? Math.max(11, Math.min(13.5, size * fontScale)) : Math.max(10, size * fontScale),
               lineHeight: 1,
               whiteSpace: "nowrap",
               willChange: "transform, opacity",

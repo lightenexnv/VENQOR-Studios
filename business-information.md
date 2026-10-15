@@ -27,7 +27,7 @@
 | Person | Role | What they own | How to write it |
 |--------|------|---------------|-----------------|
 | **Neil Verma** | Founder — Engineering / Development | All coding and development | `Neil Verma, Founder — Engineering` — never "CEO/CTO" |
-| **Yojasvi** | Founder — Marketing & Operations | Marketing and management | `Yojasvi, Founder — Marketing & Operations` — single name is correct |
+| **Yojasvi Choudhary** | Founder — Marketing & Operations | Marketing and management | `Yojasvi Choudhary, Founder — Marketing & Operations` |
 | **Team** | Small senior team | Ships project-to-project with the founders | Mention in **one sentence max**, no names/roles/bios: e.g., `Backed by a small senior team that ships with us project to project.` |
 
 **Avatar / Book Call card rule:** Every `Kate Wilington / Kate W.` reference must be replaced. The card should read `VENQOR Studios` or `Talk to the Founders` with a neutral studio avatar (or combined Neil+Yojasvi treatment). Update `SITE.manager` fields and all `BookCallCard` instances.
@@ -99,6 +99,10 @@ Live work spans e-commerce (Shopify + custom), AI web apps, and business website
 ### 5.3 Case study in [06] Before & After
 
 **MORPHO — Natural Spring Water** (`https://morphowater.com/`). Tags `E-Commerce · Brand Website`. Before/after images: `/assets/case/morpho-a.jpg` + `morpho-b.jpg`, logo `/assets/case/morpho-logo.svg`. Copy: premium brand store, fast pages, clear storytelling, checkout that converts.
+
+### 5.4 How We Work — no durations
+
+Owner requested **no timeline badges** under How We Work (no `2–4 days` / `1–2 weeks` pills). `SITE.process.steps` must not have a `time` field, and `Process.tsx` must not render `styles.time`. Keep only `[001]` number, title, and paragraph.
 
 ---
 

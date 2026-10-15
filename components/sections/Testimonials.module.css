@@ -273,11 +273,14 @@
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
-  z-index: 1;
+  z-index: 25;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  pointer-events: none;
 }
 .reviewSphere {
   position: absolute;
-  inset: 40px 20px 10px;
+  inset: 0;
 }
 @media (max-width: 809.98px) {
   .reviews {
@@ -386,7 +389,7 @@ a.proof:hover .shot {
   opacity: 0.55;
 }
 
-/* project-type illustrations (private projects) are portrait — show their middle */
+/* project-type illustrations (private projects) are framed like websites */
 .shotArt {
-  object-position: center 30%;
+  object-position: top center;
 }

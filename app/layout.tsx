@@ -3,6 +3,7 @@ import { Space_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import { SITE } from "@/content/site";
+import SmoothScroll from "@/components/layout/SmoothScroll";
 
 // Space Mono — every heading, label and button on the page.
 const spaceMono = Space_Mono({
@@ -101,7 +102,7 @@ function jsonLd() {
     foundingDate: "2024",
     founders: [
       { "@type": "Person", name: "Neil Verma", jobTitle: "Founder — Engineering" },
-      { "@type": "Person", name: "Yojasvi", jobTitle: "Founder — Marketing & Operations" },
+      { "@type": "Person", name: "Yojasvi Choudhary", jobTitle: "Founder — Marketing & Operations" },
     ],
     areaServed: ["India", "Germany", "United States"],
     knowsAbout: [
@@ -160,7 +161,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
         ))}
       </head>
-      <body>{children}</body>
+      <body>
+        <SmoothScroll />
+        {children}
+      </body>
     </html>
   );
 }

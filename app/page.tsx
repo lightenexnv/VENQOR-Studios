@@ -15,6 +15,7 @@ import Works from "@/components/sections/Works";
 import Process from "@/components/sections/Process";
 import Testimonials from "@/components/sections/Testimonials";
 import Insights from "@/components/sections/Insights";
+import Founders from "@/components/sections/Founders";
 import FaqContact from "@/components/sections/FaqContact";
 
 export default function Home() {
@@ -30,6 +31,7 @@ export default function Home() {
         <Process />
         <Testimonials />
         <Insights />
+        <Founders />
         <FaqContact />
       </main>
       <Footer />

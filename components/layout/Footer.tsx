@@ -118,8 +118,9 @@ export default function Footer() {
                   {SITE.contact.email}
                 </a>
                 {SITE.contact.phones.map((p) => (
-                  <a key={p.label} href={p.href} className="t-20">
-                    {p.label}: {p.value}
+                  <a key={p.label} href={p.href} className={`t-20 ${styles.phoneLink}`}>
+                    <span className={styles.phoneLabel}>{p.label}</span>
+                    <span className={styles.phoneValue}>{p.value}</span>
                   </a>
                 ))}
               </address>

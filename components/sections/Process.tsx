@@ -30,7 +30,6 @@ export default function Process() {
                   <p className={`t-17 ${styles.n}`}>{s.n}</p>
                   <h3 className={`t-84 tb-53 ph-38 ${styles.title}`}>{s.title}</h3>
                   <p className={`t-body ${styles.text}`}>{s.text}</p>
-                  <p className={`t-caps ${styles.time}`}>{s.time}</p>
                 </article>
               ))}
             </div>

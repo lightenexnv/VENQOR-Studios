@@ -177,6 +177,28 @@
   gap: 40px;
   margin: 75px 0 100px; /* 20 gap + 80 spacer */
 }
+.phoneLink {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-decoration: none;
+}
+.phoneLabel {
+  font-size: 15px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  color: var(--white-70);
+  transition: color 0.2s ease;
+}
+.phoneValue {
+  white-space: nowrap;
+  color: var(--white);
+  transition: color 0.2s ease;
+}
+.phoneLink:hover .phoneLabel,
+.phoneLink:hover .phoneValue {
+  color: var(--white);
+}
 
 /* ---------- bottom bar ---------- */
 .bottom {
