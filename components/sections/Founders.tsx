@@ -62,11 +62,11 @@ export default function Founders() {
                 <div className={styles.metaBox}>
                   <div className={styles.roleRow}>
                     <span className={styles.rolePill}>
-                      {isNeil ? "DEVELOPER · TECH" : "MARKETING · MGMT"}
+                      {founder.rolePill || (isNeil ? "HEAD OF DEVELOPMENT" : "HEAD OF MARKETING")}
                     </span>
                     <span className={styles.statusPill}>
                       <span className={styles.statusDot} aria-hidden />
-                      DIRECT OWNERSHIP
+                      {founder.teamPill || (isNeil ? "DEV & TESTING TEAMS" : "MARKETING & CARE TEAMS")}
                     </span>
                   </div>
 

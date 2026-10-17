@@ -14,7 +14,7 @@ export const SITE = {
   meta: {
     title: "VENQOR Studios \u2014 3D Websites & Apps That Grow Your Business",
     description:
-      "VENQOR Studios builds 3D, high-performance websites and apps \u2014 static, dynamic, e-commerce, portfolios, and iOS apps with Flutter & Swift. SEO-ready for Google and AI search. From development to deployment and long-term care.",
+      "VENQOR Studios is a professional digital development company. Our dedicated developer, testing, maintenance, and marketing teams build high-performance 3D websites, MERN platforms, and mobile apps with end-to-end support.",
     keywords: [
       "VENQOR Studios",
       "VENQOR",
@@ -96,9 +96,9 @@ export const SITE = {
     more: "[MORE ABOUT US]",
     image: `${A}/about/about.jpg`,
     body: [
-      "VENQOR Studios is a two-founder studio. Neil Verma leads development, Yojasvi Choudhary leads marketing and operations. Backed by a small senior team, we ship together \u2014 every project has clear ownership and no hand-offs. ",
-      "We build every kind of website \u2014 3D and interactive, static, dynamic, headless, e-commerce, and portfolios \u2014 plus iOS and cross-platform apps. From development to deployment and long-term maintenance, we stay on so large-scale projects keep getting better after launch. ",
-      "Every build is SEO-compatible by default: clean code, fast pages, and structure that both Google and AI search can understand. We don\u2019t sell SEO \u2014 we build sites that are ready to rank.",
+      "VENQOR Studios is a full-service digital development company. Headed by Neil Verma (Head of Development) and Yojasvi Choudhary (Head of Marketing), our specialized developer, testing, maintenance, and marketing teams work as one unified unit \u2014 delivering enterprise-grade builds with agile ownership. ",
+      "We build and maintain every digital solution: immersive 3D experiences, scalable web applications, robust e-commerce, and native mobile apps. Our dedicated development and QA testing teams build with precision, while our ongoing maintenance team ensures continuous uptime, speed, and feature growth after launch. ",
+      "Every build is SEO-compatible by default: clean architecture, validated code, and high Core Web Vitals that Google and AI search reward. As a professional development provider, we turn complex technical requirements into high-converting products.",
     ],
     stackTitle: "Our Stack",
     stack: [
@@ -135,42 +135,42 @@ export const SITE = {
     items: [
       {
         title: "3D & Interactive Websites",
-        long: "We build 3D and interactive websites that feel premium and keep people scrolling. From subtle depth and motion to full WebGL scenes, everything is fast, responsive, and built to guide visitors toward action. Delivered with clean components and handover docs.",
+        long: "Our 3D developer team crafts interactive websites that feel premium and keep people scrolling. From subtle depth and motion to full WebGL scenes, everything is rigorously tested by our QA team for fluid 60fps performance across all devices.",
         text: "Immersive 3D, WebGL, motion that converts.",
         image: `${A}/services/3d-interactive.svg`,
         align: "left",
       },
       {
         title: "Static & Dynamic Websites",
-        long: "Static for speed, dynamic for flexibility, headless when you need to scale. We build sites that load fast, read well on every device, and are easy for your team to update. CMS, analytics, and forms included from day one.",
+        long: "Static for speed, dynamic for flexibility, headless when you need to scale. Built by our web development team with modern architectures, verified by our testing team, and structured for easy management from day one.",
         text: "Fast, modern, headless-ready sites for any scale.",
         image: `${A}/services/static-dynamic.svg`,
         align: "center",
       },
       {
         title: "E-Commerce Platforms",
-        long: "Full e-commerce builds with clean product systems, fast checkout, and inventory that just works. We handle catalog, payments, and integrations, and we stay on for maintenance so the store keeps growing after launch.",
+        long: "Full e-commerce builds with clean product systems, secure checkout, and seamless inventory. Our development team builds the store, and our maintenance team provides ongoing care, updates, and speed optimization as your sales scale.",
         text: "Stores that sell \u2014 and stay fast at scale.",
         image: `${A}/services/ecommerce.svg`,
         align: "right",
       },
       {
         title: "Portfolio Websites",
-        long: "For founders, creators, artists, and professionals who need to stand out. We craft portfolio sites that put your work first \u2014 clear story, strong visuals, and a structure that turns viewers into enquiries. 15+ portfolios shipped for well-known names.",
+        long: "For founders, creators, artists, and enterprises who need to stand out. Our creative development and marketing teams craft portfolio sites that put your work first \u2014 clear storytelling, strong visuals, and SEO readiness that converts viewers into clients.",
         text: "Portfolios that make people remember you.",
         image: `${A}/services/portfolio.svg`,
         align: "center",
       },
       {
         title: "App Development",
-        long: "Native-quality apps with Flutter and Swift \u2014 one codebase where it makes sense, native where it matters. We design, build, test, and publish to the App Store and Play Store, then maintain and iterate with you.",
+        long: "Native-quality apps with Flutter and Swift. Our mobile development and QA testing teams build, test across devices, and publish to the App Store and Play Store, followed by dedicated post-launch support and maintenance.",
         text: "iOS & cross-platform apps, shipped to store.",
         image: `${A}/services/app-development.svg`,
         align: "left",
       },
       {
         title: "Launch, Scale & Care",
-        long: "We take you from idea to live \u2014 build, QA, deploy, monitor \u2014 and stay on for large-scale maintenance. Every site is SEO-compatible by default: clean semantics, structured data, and performance that helps you rank on Google and AI search. We build the foundation; you own the growth.",
+        long: "Complete lifecycle support by a professional development company. Our QA testing team verifies every release, our maintenance team manages continuous hosting and security, and our marketing team ensures organic search readiness for Google and AI search.",
         text: "From development to deployment \u2014 and long after.",
         image: `${A}/services/launch-care.svg`,
         align: "center",
@@ -242,35 +242,35 @@ export const SITE = {
       {
         n: "[001]",
         title: "Discover",
-        text: "We get clear on your goals, audience, and constraints. We look at what\u2019s live, what\u2019s working, and what\u2019s blocking growth \u2014 so we agree on what success looks like before we design anything.",
+        text: "Our strategy and leadership team clarifies your business goals, target audience, and technical scope. We align development, marketing, and architecture requirements before writing any code.",
       },
       {
         n: "[002]",
         title: "Define",
-        text: "We turn goals into a clear scope, timeline, and measurable outcomes. Roadmap, responsibilities, and what we\u2019ll track \u2014 all written down so there are no surprises.",
+        text: "We turn goals into an actionable engineering roadmap, technical architecture, and milestones. Scope, testing standards, and sprint schedules are clearly documented.",
       },
       {
         n: "[003]",
         title: "Design",
-        text: "We explore directions, then lock a modular design system \u2014 layout, type, motion, and 3D where it adds value. Content structure and accessibility are specified so build is predictable.",
+        text: "We lock a modular design system \u2014 layout, typography, UI components, and 3D interactions. The development and marketing teams ensure every interaction is fast, accessible, and conversion-focused.",
       },
       {
         n: "[004]",
-        title: "Build",
-        text: "We build fast, maintainable products \u2014 MERN for web, Flutter and Swift for apps \u2014 with CMS, payments, and analytics from day one. Performance budgets and QA run continuously.",
+        title: "Build & Test",
+        text: "Our developer team writes clean, modular code in MERN, Flutter, and Swift. Simultaneously, our QA testing team runs continuous multi-device verification, security audits, and performance checks.",
       },
       {
         n: "[005]",
         title: "Launch",
-        text: "We ship with a checklist: QA, Core Web Vitals, redirects, tracking, and security. We watch the first 72 hours closely and fix fast. Your team gets editing training and docs.",
+        text: "Our deployment team executes a comprehensive launch protocol: full QA sign-off, Core Web Vitals optimization, tracking, and security headers. We actively monitor the first 72 hours with dedicated live support.",
       },
       {
         n: "[006]",
-        title: "Improve",
-        text: "We improve in focused sprints \u2014 experiments, content, and performance \u2014 driven by real data. Small releases, steady growth, and ongoing care for large-scale products.",
+        title: "Maintain & Grow",
+        text: "Our dedicated maintenance team handles server monitoring, security patches, and updates, while our marketing team runs ongoing performance and SEO experiments to scale your digital reach.",
       },
     ],
-    cta: "Talk to the Founders",
+    cta: "Talk to the Team",
     ctaImages: { phone: `${A}/process/phone.png`, email: `${A}/process/email.png`, manager: `${A}/process/manager.png` },
   },
 
@@ -389,18 +389,20 @@ export const SITE = {
 
   founders: {
     number: "[07]",
-    label: "Founders",
-    tagline: "Direct ownership from concept to deployment. Two founders shipping together.",
+    label: "Founders & Leadership",
+    tagline: "Executive leadership, specialized teams. From technical architecture and testing to full-scale market growth.",
     subtext:
-      "VENQOR Studios is led by two founders with complementary expertise. Neil Verma leads all engineering and technical architecture; Yojasvi Choudhary leads marketing, brand strategy, and client operations. Backed by a small senior team, we work directly with every client \u2014 zero layers, zero hand-offs.",
+      "VENQOR Studios combines strategic leadership with specialized developer, testing, maintenance, and marketing teams. Neil Verma heads engineering and technical execution; Yojasvi Choudhary heads marketing, brand strategy, and client operations. Direct leadership with complete team-backed delivery.",
     items: [
       {
         name: "Neil Verma",
-        role: "Founder \u2014 Engineering",
-        focus: "Developer \u00B7 Technical Architecture",
-        desc: "Handles all coding, development, and technical execution. Specializes in immersive 3D WebGL experiences, full-stack MERN platforms, and high-performance mobile apps built for scale.",
+        role: "Co-Founder \u2014 Head of Development",
+        rolePill: "HEAD OF DEVELOPMENT",
+        teamPill: "DEV & TESTING TEAMS",
+        focus: "Head of Development \u00B7 Engineering & Testing",
+        desc: "Directs our developer and QA testing teams across all digital platforms. Oversees full-stack MERN architecture, 3D WebGL experiences, mobile applications, and code verification for enterprise reliability.",
         image: `${A}/founders/neil-verma.png`,
-        skills: ["Three.js", "Next.js", "WebGL", "MERN Stack", "Flutter & Swift", "Architecture"],
+        skills: ["Technical Architecture", "Developer Team", "Testing & QA", "Next.js & MERN", "WebGL & 3D", "Flutter & Swift"],
         phone: "+91 93066 28339",
         phoneHref: "tel:+919306628339",
         portfolio: "neilverma.world",
@@ -408,11 +410,13 @@ export const SITE = {
       },
       {
         name: "Yojasvi Choudhary",
-        role: "Founder \u2014 Marketing & Operations",
-        focus: "Marketing & Management",
-        desc: "Handles marketing, strategic growth, and client management. Directs brand positioning, business operations, and organic search readiness to turn digital products into scalable brands.",
+        role: "Co-Founder \u2014 Head of Marketing",
+        rolePill: "HEAD OF MARKETING",
+        teamPill: "MARKETING & CARE TEAMS",
+        focus: "Head of Marketing \u00B7 Growth & Operations",
+        desc: "Directs our marketing, brand strategy, and client maintenance teams. Leads market positioning, performance marketing, SEO infrastructure, and long-term care operations to turn digital products into scalable brands.",
         image: `${A}/founders/yojasvi.png`,
-        skills: ["Brand Strategy", "Growth Marketing", "Operations", "Client Success", "SEO Strategy", "Scale"],
+        skills: ["Marketing Strategy", "Growth Marketing", "Brand Positioning", "Maintenance Team", "SEO Infrastructure", "Client Operations"],
         phone: "+91 70739 99605",
         phoneHref: "tel:+917073999605",
         portfolio: "Start a Project",
@@ -435,11 +439,11 @@ export const SITE = {
       },
       {
         q: "How do you price?",
-        a: "Fixed scope, fixed price after discovery. We don\u2019t do one-size-fits-all packages. After a short call, we send a proposal with scope, timeline, and cost broken down by phase so you know exactly what you\u2019re paying for.",
+        a: "Fixed scope, fixed price after discovery. As a professional development company, we provide transparent milestone-based proposals outlining engineering, QA testing, deployment, and ongoing maintenance phases so you know exactly what you\u2019re paying for.",
       },
       {
         q: "Do you handle deployment and maintenance?",
-        a: "Yes. We handle development through deployment and stay on for long-term maintenance \u2014 especially for large-scale projects. That includes updates, performance, security, and small feature sprints so your product keeps improving.",
+        a: "Yes. Our developer and dedicated maintenance teams handle everything through live deployment and provide long-term care contracts. That includes continuous uptime monitoring, security patches, performance tuning, and agile feature sprints.",
       },
       {
         q: "Are your websites SEO-compatible?",
@@ -451,7 +455,7 @@ export const SITE = {
       },
       {
         q: "Can you work with our existing team or brand?",
-        a: "Absolutely. We often work alongside in-house teams and brand partners. We align on guidelines, share a design system in Figma, and keep communication in one place with weekly demos.",
+        a: "Absolutely. Our developer, testing, and marketing teams collaborate smoothly alongside in-house teams and brand partners. We align on guidelines, integrate with your existing workflows, and keep communication clear with weekly demos.",
       },
     ],
   },

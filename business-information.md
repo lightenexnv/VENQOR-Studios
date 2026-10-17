@@ -15,20 +15,20 @@
 | **One-line pitch** | We build 3D, high-performance websites and apps that look premium and rank higher. |
 | **Tagline (primary)** | **We Build Websites That Move — And Businesses That Grow.** |
 | **Tagline (short alternates)** | `Websites & Apps That Grow Your Business` · `3D Websites. Real Results.` |
-| **Elevator (use in About / OG / meta)** | VENQOR Studios is a two-founder studio — Neil Verma (development) and Yojasvi (marketing & management) — backed by a small senior team. We build every kind of website and app: 3D & interactive, static, dynamic, headless, e-commerce, and portfolio sites, plus iOS and cross-platform apps. We ship fast, SEO-ready builds for Google and AI search, and we stay on for deployment and long-term maintenance. |
+| **Elevator (use in About / OG / meta)** | VENQOR Studios is a digital development company led by Neil Verma (Head of Development) and Yojasvi Choudhary (Head of Marketing), backed by specialized developer, testing, maintenance, and marketing teams. We build and maintain 3D & interactive, static, dynamic, headless, e-commerce, and portfolio platforms, plus iOS and cross-platform apps. We ship fast, SEO-ready builds for Google and AI search, and provide long-term care contracts. |
 | **Domain** | `https://venqor.online` — live domain. Used for `metadataBase`, canonical, OG (`/assets/brand/og.jpg`), `sitemap.xml`, `robots.txt`, and JSON-LD `Organization.url`. |
 | **Public contact** | Email `contact@venqor.com` · Phones `Yojasvi +91 70739 99605` / `Neil Verma +91 93066 28339` · Region `India — working worldwide` · Booking via `#contact` form (Calendly not yet). |
 | **Socials** | Not yet public — `SITE.socials` is empty until real URLs are provided. Footer hides the Follow block when empty. Never link to generic `dribbble.com`. |
 
 ---
 
-## 2. Founders & Team
+## 2. Founders & Leadership
 
 | Person | Role | What they own | How to write it |
 |--------|------|---------------|-----------------|
-| **Neil Verma** | Founder — Engineering / Development | All coding and development | `Neil Verma, Founder — Engineering` — never "CEO/CTO" |
-| **Yojasvi Choudhary** | Founder — Marketing & Operations | Marketing and management | `Yojasvi Choudhary, Founder — Marketing & Operations` |
-| **Team** | Small senior team | Ships project-to-project with the founders | Mention in **one sentence max**, no names/roles/bios: e.g., `Backed by a small senior team that ships with us project to project.` |
+| **Neil Verma** | Co-Founder — Head of Development | Engineering architecture, developer team, and QA testing team oversight | `Neil Verma, Co-Founder — Head of Development` |
+| **Yojasvi Choudhary** | Co-Founder — Head of Marketing | Brand strategy, growth marketing, client operations, and maintenance team oversight | `Yojasvi Choudhary, Co-Founder — Head of Marketing` |
+| **Teams** | Specialized in-house teams | Developer team (frontend, 3D, full-stack, mobile), QA testing team, ongoing maintenance team, and marketing team | Highlight team capabilities across development, continuous testing, long-term maintenance, and marketing |
 
 **Avatar / Book Call card rule:** Every `Kate Wilington / Kate W.` reference must be replaced. The card should read `VENQOR Studios` or `Talk to the Founders` with a neutral studio avatar (or combined Neil+Yojasvi treatment). Update `SITE.manager` fields and all `BookCallCard` instances.
 

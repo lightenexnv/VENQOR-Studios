@@ -101,8 +101,8 @@ function jsonLd() {
     email: SITE.contact.email,
     foundingDate: "2024",
     founders: [
-      { "@type": "Person", name: "Neil Verma", jobTitle: "Founder — Engineering" },
-      { "@type": "Person", name: "Yojasvi Choudhary", jobTitle: "Founder — Marketing & Operations" },
+      { "@type": "Person", name: "Neil Verma", jobTitle: "Co-Founder — Head of Development" },
+      { "@type": "Person", name: "Yojasvi Choudhary", jobTitle: "Co-Founder — Head of Marketing" },
     ],
     areaServed: ["India", "Germany", "United States"],
     knowsAbout: [
